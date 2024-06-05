@@ -7,10 +7,7 @@ Official Website (used for data collection): https://worldwidedishes.com/
 
 - [Licence and terms of use](./LICENCE.md)
 
-We present the World Wide Dishes dataset which seeks to assess these disparities through a39
-decentralised data collection effort to gather perspectives directly from people with a wide variety of40
-backgrounds from around the globe with the aim of creating a dataset consisting of their insights into41
-their own experiences of foods relevant to their cultural, regional, national, or ethnic lives.
+We present the World Wide Dishes dataset which seeks to assess these disparities through a decentralised data collection effort to gather perspectives directly from people with a wide variety of backgrounds from around the globe with the aim of creating a dataset consisting of their insights into their own experiences of foods relevant to their cultural, regional, national, or ethnic lives.
 
 - [World Wide Dishes csv](./data/WorldWideDishes_2024_June_World_Wide_Dishes.csv)
 - [World Wide Dishes Excel Sheet](./data/WorldWideDishes_2024_June.xlsx)

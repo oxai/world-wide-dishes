@@ -29,8 +29,8 @@ Please refer to the README.md in the webapp directory for instructions on how to
 - [Web application source code and README.md](./webapp)
 
 ## The World Wide Dishes Experiments
-In addition to World Wide Dishes, we present US was selected as a baseline, and an additional test suite was curated253
-for regional parity. 
+In addition to World Wide Dishes dataset, we present 30 dishes for 5 selected African countries + 30 dishes for the US as a baseline. 
+An additional test suite was curated for regional parity. 
 
 - [Dishes selected for the five African countries + the US](./data/WorldWideDishes_2024_June_Selected_Countries.csv)
 - [US Test set csv](./data/WorldWideDishes_2024_June_US_Test_Set.csv) (same set of dishes in the previous sheet, but also includes a regional label)

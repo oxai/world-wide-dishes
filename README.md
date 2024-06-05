@@ -18,15 +18,7 @@ their own experiences of foods relevant to their cultural, regional, national, o
 The meta data of the World Wide Dishes dataset is available in the [Croissant format](https://github.com/mlcommons/croissant):
 - [World Wide Dishes Croissant metadata](./croissant-worldwidedishes.json)
 
-## The World Wide Dishes Experiments
-In addition to World Wide Dishes, we present US was selected as a baseline, and an additional test suite was curated253
-for regional parity. 
-
-- [Dishes selected for the five African countries + the US](./data/WorldWideDishes_2024_June_Selected_Countries.csv)
-- [US Test set csv](./data/WorldWideDishes_2024_June_US_Test_Set.csv) (same set of dishes in the previous sheet, but also includes a regional label)
-- [Dishes selected for the five African countries + the US / US Test set (Excel Sheet)](./data/WorldWideDishes_2024_June.xlsx)
-
-## The website
+## The World Wide Dishes website
 Link to the website used during data collection: <https://worldwidedishes.com/>
 
 The website includes our Data Protection Policy and FAQs developed to support contributors during the data collection process. 
@@ -35,6 +27,14 @@ The website includes our Data Protection Policy and FAQs developed to support co
 
 Please refer to the README.md in the webapp directory for instructions on how to run your own instance of the website.
 - [Web application source code and README.md](./webapp)
+
+## The World Wide Dishes Experiments
+In addition to World Wide Dishes, we present US was selected as a baseline, and an additional test suite was curated253
+for regional parity. 
+
+- [Dishes selected for the five African countries + the US](./data/WorldWideDishes_2024_June_Selected_Countries.csv)
+- [US Test set csv](./data/WorldWideDishes_2024_June_US_Test_Set.csv) (same set of dishes in the previous sheet, but also includes a regional label)
+- [Dishes selected for the five African countries + the US / US Test set (Excel Sheet)](./data/WorldWideDishes_2024_June.xlsx)
 
 ## Reproducing experiments
 

@@ -1,0 +1,26 @@
+{% extends "survey/base.html" %}
+{% load guest_user %}
+
+{% block title %}Dish{% endblock %}
+
+{% block subtitle %}Step 2: Tell us about food!{% endblock %}
+
+{% block subcontent %}
+
+<div class="my-4">
+<p>Please describe a dish or food you consider to be a part of your cultural background(s)!</p>
+<form method="post" novalidate>
+  {% csrf_token %}
+
+    {% if form.errors %}
+    <div class="alert alert-danger" role="alert">
+        There was an error with your submission. Please check the form and try again.
+    </div>
+    {% endif %}
+
+  {% include 'components/form.html' %}
+  <a href="{% url 'survey:dish_update' pk=dish.id %}" class="btn btn-outline-secondary m-1">Back</a>
+  <button type="submit" class="btn btn-primary m-1">Save and continue</button>
+</form>
+</div>
+{% endblock %}

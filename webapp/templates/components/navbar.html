@@ -1,0 +1,65 @@
+{% load static %}
+{% load i18n static %}
+{% load guest_user %}
+<nav class="navbar navbar-expand-lg bg-primary fixed-top mb-5" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'pages:home' %}">
+            <b>World Wide Dishes</b>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav me-auto small-nav-text">
+<!--                {% url 'pages:home' as home_url %}-->
+<!--                <a class="nav-link {% if request.get_full_path == home_url %}active{% endif %}" href="{{ home_url }}">Home</a>-->
+                <a class="nav-link" href="{{ home_url }}#about">About</a>
+                {% url 'survey:leaderboard' as leaderboard_url %}
+                <a class="nav-link {% if request.get_full_path == leaderboard_url %}active{% endif %}" href="{{ leaderboard_url }}">Leaderboard</a>
+                {% url 'pages:contact' as contact_url %}
+                <a class="nav-link {% if request.get_full_path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact Us</a>
+                {% url 'pages:data_protection' as data_protection %}
+                <a class="nav-link {% if request.get_full_path == data_protection %}active{% endif %}" href="{{ data_protection }}">Data Protection</a>
+                {% url 'pages:faq' as faq_url %}
+                <a class="nav-link {% if request.get_full_path == faq_url %}active{% endif %}" href="{{ faq_url }}">FAQs</a>
+            </div>
+            {% block nav-global %}{% endblock %}
+            {% if user.has_usable_password %}
+            <a href="{% url 'accounts:profile' %}" class="me-2">
+                <button class="btn btn-outline-light d-inline-flex align-items-center small-nav-text" type="button">
+                <i class="material-icons d-flex align-items-center">account_circle</i>
+                    {% if user|is_guest_user %}{% translate 'Guest Profile' %}{% else %}{% translate 'Profile' %}{% endif %}
+                </button>
+            </a>
+            {% endif %}
+            {% if user|is_guest_user %}
+            <a href="{% url 'accounts:signup' %}?next={{ request.get_full_path }}">
+                <button class="btn btn-outline-light me-2 small-nav-text" type="button">{% translate 'Register' %}</button>
+            </a>
+            {% endif %}
+            {% if user.is_anonymous %}
+            <a href="{% url 'login' %}?next={{ request.get_full_path }}">
+                <button class="btn btn-outline-light small-nav-text" type="button">{% translate 'Login' %}</button>
+            </a>
+            {% endif %}
+            {% if user.is_staff %}
+            <a href="{% url 'admin:index' %}" class="me-2">
+                <button class="btn btn-outline-light d-inline-flex small-nav-text" type="button">
+                <i class="material-icons d-flex align-items-center">admin_panel_settings</i> {% translate 'Admin' %}</button>
+            </a>
+            {% endif %}
+            {% if not user.is_anonymous %}
+            {% if user|is_guest_user %}
+            <a href="{% url 'accounts:delete_user' %}" class="btn btn-outline-danger small-nav-text"
+          onclick="return confirm('This action will delete all the data you\'ve submitted. Are you sure you want to proceed?');">Forget me</a></p>
+            {% else %}
+            <form method="post" action="{% url 'logout' %}" style="display: contents">
+                {% csrf_token %}
+                <button class="btn btn-outline-light small-nav-text" type="submit">{% translate 'Log out' %}</button>
+            </form>
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</nav>

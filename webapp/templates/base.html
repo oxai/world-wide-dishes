@@ -1,0 +1,69 @@
+{% load compress %}
+{% load static %}
+{% load i18n static %}<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr,auto' }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %} | World Wide Dishes - Exploring cultural representations in AI through food!</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+    {% compress css %}
+        <link type="text/x-scss" href="{% static 'assets/scss/style.scss' %}" rel="stylesheet" media="screen">
+        {% block extrascss %}{% endblock %}
+    {% endcompress %}
+
+    {{ form.media.css }}
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+                  crossorigin="anonymous"></script>
+    {{ form.media.js }}
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SVB1KS8ZPZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SVB1KS8ZPZ');
+    </script>
+    <style>
+        #footer-nav {
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 500px) {
+            #footer-nav {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    </style>
+    {% block extrastyle %}{% endblock %}
+    {% block extrascript %}{% endblock %}
+</head>
+<body>
+    {% include "components/navbar.html" %}
+    {% block content %}{% endblock %}
+    {% if not view.is_popup %}
+    <footer id="footer">
+        {% block footer %}
+        <div class="bg-dark text-center text-white p-4" >
+            <div class="navbar-nav justify-content-center" id="footer-nav">
+                <a class="nav-link px-2" href="{% url 'pages:home' %}#about">About</a>
+                <a class="nav-link px-2" href="{% url 'survey:leaderboard' %}">Leaderboard</a>
+                <a class="nav-link px-2" href="{% url 'pages:contact' %}">Contact Us</a>
+                <a class="nav-link px-2" href="{% url 'pages:data_protection' %}">Data protection</a>
+                <a class="nav-link px-2" href="{% url 'pages:faq' %}">FAQs</a>
+            </div>
+            <hr />
+            <p><a href="https://www.oxai.org/" class="text-white">Oxford Artificial Intelligence Society</a>, OxAI Labs &copy; 2024.</p>
+        </div>
+        {% endblock %}
+    </footer>
+    {% endif %}
+</body>
+</html>

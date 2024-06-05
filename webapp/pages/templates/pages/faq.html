@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}FAQ{% endblock %}
+
+{% block extrastyle %}
+<style>
+    h5 {
+        margin-top: -60px;
+        padding: 90px 0 0.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+    <h2 class="p-5 text-center">Frequently Asked Questions</h2>
+    <h5>Table of contents</h5>
+    <ul class="list-spacing">
+        <li><a href="#food">What kind of food information are you looking for?</a></li>
+        <li><a href="#overlap">What if I already see a dish from my region on the leaderboard?</a></li>
+        <li><a href="#how-many">How many dishes do you expect per region?</a></li>
+        <li><a href="#ambassadors">What is the role of the Community Ambassadors?</a></li>
+        <li><a href="#questions">What sort of questions can I expect?</a></li>
+        <li><a href="#language">Am I only allowed to submit answers in English?</a></li>
+        <li><a href="#photo">What if I don’t have any personal photographs of food?</a></li>
+        <li><a href="#credit">Will I be given credit for submitting data?</a></li>
+        <li><a href="#commitment">What is the expected time commitment for this project?</a></li>
+        <li><a href="#timeline">For how long will World Wide Dishes be collecting data about food?</a></li>
+        <li><a href="#usage">I would like to know how my data will be used, please.</a></li>
+        <li><a href="#deletion">I would like to know how to delete my data, please.</a></li>
+        <li><a href="#share">Can I share this website with anyone else?</a></li>
+        <li><a href="#social">Is World Wide Dishes active on social media?</a></li>
+        <li><a href="#why-food">Why have we chosen food as the basis for this project?</a></li>
+        <li><a href="#outputs">What will the outputs of this research look like?</a></li>
+        <li><a href="#benchmark">What is an AI benchmark?</a></li>
+        <li><a href="#who">Who are we?</a></li>
+        <li><a href="#thumbnail">Where did we get our “World of Dishes” image? Why do some of the entries look odd?</a></li>
+        <li><a href="#financial">Has the project received any financial support?</a></li>
+        <li><a href="#ethics">Has this project and its data collection procedure been reviewed by an ethics board?</a></li>
+        <li><a href="#feedback">I’d like to share some feedback about the website. Is this possible?</a></li>
+    </ul>
+
+    <h5 id="food">What kind of food information are you looking for?</h5>
+    <p>
+        We are looking for diverse information about different dishes that are associated with people’s home(s) and culture(s).
+    </p>
+    <p>
+        We hope to gain a better understanding of all the different types of food there are in the world, and how it differs from village to village, city to city and country to country!
+    </p>
+
+    <h5 id="overlap">What if I already see a dish from my region on the leaderboard?</h5>
+
+    <p>
+        We would encourage you to try to think of another dish that you associate with your home(s) and culture(s). Once you have done so, you will have the opportunity to review the other dishes submitted by other participants from your region.
+    </p>
+    <p>
+        However, if you think there is a different perspective you can share, or you have additional information to add, <b>please be encouraged to submit the dish as well</b>. In the next stages of the research, we as a team will onboard all the information you share with us and combine it.
+    </p>
+
+    <h5 id="how-many">How many dishes do you expect per region?</h5>
+    <p>
+        This really depends on the part of the world, and the range of diversity in cultural experiences present  in different regions. We’d like to capture as much diversity as possible, so we aim for “as many as possible” but we recognise that some regions will have more than others.
+    </p>
+    <p>
+        There are many factors that will contribute to the discrepancies in the number of dishes submitted, one of the most important being how widely we can spread the word about World Wide Dishes. If you have capacity to help, please consider joining our wonderful team of Community Ambassadors by filling in <a href="https://forms.gle/t8ZGgR9K7QUrYgjm6" target="_blank">this Google Form</a>.
+    </p>
+
+    <h5 id="ambassadors">What is the role of the Community Ambassadors?</h5>
+    <p>
+        Community Ambassadors play a really important role as force multipliers to help us reach many more communities than we would be able to one our own. Community Ambassadors are asked to share the website with their networks, help answer questions with the project and communicate <a href="{% url 'pages:home' %}#about">with the team</a> if there are any challenges we may not be aware of!
+    </p>
+    <p>
+        We encourage a two way street of communication with Community Ambassadors as we definitely have a lot to learn from! Please consider joining us and filling in <a href="https://forms.gle/t8ZGgR9K7QUrYgjm6" target="_blank">this Google Form</a>.
+    </p>
+
+    <h5 id="questions">What sort of questions can I expect?</h5>
+    <p>
+        We will be asking you to tell us as much as possible about a dish or food that you associate with your home(s) and culture(s). We will ask for:
+    </p>
+    <ul>
+        <li>
+            Some personal information: your national and cultural identity(ies) as <b>you</b> define them
+            <ul>
+                <li>
+                    Sharing some additional identifying information will also allow us to give you credit in upcoming research output
+                </li>
+            </ul>
+        </li>
+        <li>The name of the dish, if possible in English and the local language used to describe the dish</li>
+        <li>The components and ingredients that make up the dish</li>
+        <li>Information about the time of day it’s eaten, the utensils used, if any drinks typically accompany the dish</li>
+        <li>We will ask you to share a recipe and a personal photograph of the dish, if these are available</li>
+    </ul>
+    <p>
+        There are also free form text boxes throughout the form where you can share any other information you would like.
+    </p>
+
+    <h5 id="language">Am I only allowed to submit answers in English?</h5>
+    <p>
+        We understand that some parts of the world are untouched by English - and so, English words may not exist for the food and ingredients you are familiar with. Please share these ingredients with us so we can have AI capabilities in other languages as well.
+    </p>
+    <p>
+        You are welcome to include information in your own language wherever you like! It is helpful to us that you tell us the name of the local language when asked in the form.
+    </p>
+
+    <h5 id="photo">What if I don’t have any personal photographs of food?</h5>
+    <p>
+        This is absolutely nothing to worry about! You are still encouraged to share as much information as possible, even if you don’t have a photo.
+    </p>
+    <p>
+        The more we learn about the names and ingredients of dishes around the world, the better!
+    </p>
+
+    <h5 id="credit">Will I be given credit for submitting data?</h5>
+    <p>
+        Absolutely! We are eager to credit all contributors by adding your name, <b>with permission</b>, to the acknowledgements section in all public releases of the research. Your insight and perspectives are valuable and recognition of your contribution is important to us.
+    </p>
+    <p>
+        If you would like to be acknowledged, we ask that you consider registering your profile and giving us permission when prompted.
+    </p>
+    <p>
+        We will also be issuing certificates to the top contributors - you can increase your submissions by engaging your friends and family. What about phoning someone older than you to ask for their ideas as well?
+    </p>
+    <p>
+        Any questions? Don’t hesitate to <a href="{% url 'pages:contact' %}">contact us</a>!
+    </p>
+
+    <h5 id="commitment">What is the expected time commitment for this project?</h5>
+    <p>
+        This is mostly up to you! We hope to collect as much information as possible about dishes from around the world, and the more you can share with us the better.
+        <b>However, we’d like to ask for at least 5-10 minutes to submit one dish from your home(s) and culture(s).</b>
+    </p>
+    <p>
+        Data collection will be open for one month, so you can come back as often as you’d like in this time period. Keep an eye on the <a href="{% url 'survey:leaderboard' %}">leaderboard</a> to keep track of progress worldwide!
+    </p>
+
+    <h5 id="timeline">For how long will World Wide Dishes be collecting data about food?</h5>
+
+    <ul class="timeline my-5">
+      {% for event in timeline %}
+      <li class="timeline-item mb-5">
+        <h6 class="fw-bold">{{ event.date }}</h6>
+  <!--      <p class="text-muted mb-2 fw-bold"></p>-->
+        <p class="text-muted">
+            {{ event.text }}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <h5 id="usage">I would like to know how my data will be used, please.</h5>
+    <p>
+        We’d encourage you to review specific points we’ve prepared within our <a href="{% url 'pages:data_protection' %}">Data Protection policy</a> and FAQs:
+    </p>
+    <ul>
+        <li><a href="{% url 'pages:data_protection' %}#data">How will my information be used?</a></li>
+        <li><a href="{% url 'pages:data_protection' %}#storage">Our research data storage policy</a></li>
+        <li><a href="#outputs">What will the research outputs be?</a></li>
+    </ul>
+
+    <h5 id="deletion">I would like to know how to delete my data, please.</h5>
+    <p>
+        This process depends on where we are in the <a href="#timeline">study period</a>. If World Wide Dishes has completed the study period, please review the <a href="{% url 'pages:data_protection' %}#withdrawal">data withdrawal policy in the Data Protection tab</a>.
+    </p>
+    <p>
+        If World Wide Dishes is actively deleting data, there are two avenues to follow, depending on whether you have chosen to participate as a guest or registered user:
+    </p>
+    <ul>
+        <li>
+            <b>As a guest user: </b><br/>
+            <b>"Forget me"</b> in the top nav bar will delete the cookies and all account and food data that you’ve provided until the current cookie session expires. After this point you will not be able to delete or modify their data in the database.
+        </li>
+        <li>
+            <b>As a registered user: </b><br />
+            Selecting <b>"delete my account and data"</b> from your profile page will delete any data that you have provided, including your name, email, nationality, and food-related entries. We will not be able to recover your account after this operation. You may re-register with us with the same email address after your account is closed.
+        </li>
+    </ul>
+
+    <h5 id="share">Can I share this website with anyone else?</h5>
+    <p>
+        Yes, please do! We’d like to reach as many parts of the world as possible. The website can be shared with your social media networks, friends, colleagues and family. We encourage you to make use of Whatsapp groups, community channels and your personal networks.
+    </p>
+    <p>
+        We especially encourage conversing with the older generations - their experience is a unique source that enriches everyone’s understanding of how food and dishes evolve and change through time and regions
+    </p>
+
+    <h5 id="social">Is World Wide Dishes active on social media?</h5>
+    <p>
+        Yes, we are! Please follow us on X/Twitter: <a href="https://twitter.com/worlddishes2024" target="_blank">https://twitter.com/worlddishes2024</a> or connect with us on LinkedIn: <a href="https://www.linkedin.com/company/world-wide-dishes/" target="_blank">https://www.linkedin.com/company/world-wide-dishes/</a>.
+    </p>
+
+    <h5 id="why-food">Why have we chosen food as the basis for this project?</h5>
+    <p>
+        <b>Food is a universally shared experience:</b> it carries a lot of meaning for all of us. Not only is it a means of nourishment, but it is a way for us to engage socially - whether it’s the process of preparing the food or coming together for a meal. Food can be a part of an ordinary day, or as part of a ceremony or ritual.
+    </p>
+    <p>
+        <b>Food connects places and times:</b> be it a your grandmother’s recipe or a typical snack in the middle of a busy work day, dishes we consume tell a story.
+    </p>
+    <p>
+        <b>Food is reflective of regional, cultural and religious contexts:</b> agriculture, history and rituals have great influences on dishes we have throughout our lives.
+    </p>
+    <p>
+        <b>Food is important in that it gives up a connection to a place:</b> it is a window to how people might associate with different home(s) and culture(s). As such, food gives us a window into how different cultures may be represented in current AI systems: such as search engines, automatic captioning systems and image generation systems.
+    </p>
+    <p>
+        Ensuring AI models don’t contribute to cultural erasure is important. Food gives us a window into understanding the limitations of these AI systems and help ourselves and other researchers to improve them for all. AI should represent us all, regardless of where we are from or currently live.
+    </p>
+
+    <h5 id="outputs">What will the outputs of this research look like?</h5>
+    <p>
+        The main output of this research will be the creation of an <a href="#benchmark">AI benchmark dataset</a>. This is a collection of data specifically designed to test and measure the performance of artificial intelligence (AI) models. Think of it as a test or exam for AI systems. This dataset will serve as a standard against which different AI models can be compared, helping to highlight their strengths and weaknesses in a consistent and fair manner.
+    </p>
+    <p>
+        Once developed, the results of our work – including the dataset itself, how it was created, and what it aims to measure – will be submitted for publication at a scientific conference and/or in a journal. By publishing our findings, we aim to share our contributions with the wider scientific community, allowing other researchers and developers to use our dataset to test their AI models and identify any weaknesses.
+    </p>
+
+    <h5 id="benchmark">What is an AI benchmark?</h5>
+    <p>
+        Benchmarks are used in the development of state of the art models by comparing them to a kind of standardised test – similar to how humans might use exams at school or university to gauge the progress of students at different institutions.
+    </p>
+    <p>
+        Benchmarks can take on various forms, but typically involve a standardised dataset and evaluation metric that can be used to test different models that are developed independently. This gives us a standardised way to test how well different models from different research labs are able to perform on a task.
+    </p>
+    <p>
+        In our case, we want to test how well models are able to represent diverse experiences of people from different cultures. We have chosen food as a lens into these experiences <a href="#why-food">[learn more about why we chose food here]</a>!
+    </p>
+
+    <h5 id="who">Who are we?</h5>
+    <p>
+        We are a research team with a shared passion for ensuring AI is used in a way that is fair for, and representative of, all who use it. You can meet all of us virtually <a href="{% url 'pages:home' %}#about">here</a>.
+    </p>
+    <p>
+        You are most welcome to contact us to ask any questions as well. You can find our details <a href="{% url 'pages:contact' %}">here</a>.
+    </p>
+
+    <h5 id="thumbnail">Where did we get our “World of Dishes” image? Why do some of the entries look odd?</h5>
+    <p>
+        This is an image generated from <a href="https://openai.com/dall-e-3" target="_blank">DALL-E</a>, using the <a href="https://chat.openai.com/" target="_blank">ChatGPT Pro interface</a>, using the text prompts to generate multiple iterations of the image, until we chose this to be the graphic for our website and project:
+    </p>
+    <ol>
+        <li>
+            “Please create a cartoon image of the world that matches the description “World Wide Food”
+        </li>
+        <li>
+            “Please make the food representative of the regions in the map”
+        </li>
+        <li>
+            “Please rotate the globe so we can see both Asia and Africa”
+        </li>
+        <li>
+            “Please incorporate the colour #111160 into the theme”
+        </li>
+    </ol>
+    <div class="text-center">
+    <img src="{% static '/assets/img/food_globe_small.jpg' %}" class="m-3"/>
+    </div>
+    <p>
+        This image looks a little odd as it is a current limitation of big AI generators to understand granular cultural representations across the world. Some dishes may be more representative of the regions than others, or some details may be missed entirely. Incorrect details may include but aren’t limited to misplacement of utensils or ingredients. You also might also notice that some regions don’t even have a dish at all!
+    </p>
+    <p>
+        These limitations are exactly what this project hopes to address directly! We look forward to your help in achieving this goal.
+    </p>
+
+    <h5 id="financial">Has the project received any financial support?</h5>
+    <p>
+        We have received a generous grant of Google Cloud credits from Google’s Compute for Underrepresented Researchers programme. We have also also received a generous Research Grant from OpenAI
+    </p>
+
+    <h5 id="ethics">Has this project and its data collection procedure been reviewed by an ethics board?</h5>
+    <p>
+        Ethics Approval for the World Wide Dishes data collection and subsequent research study (reference: CS_C1A_24_004) was obtained from the Departmental Research Ethics Committees of the Computer Science Department at the University of Oxford. Should you have any questions, please <a href="{% url 'pages:contact' %}">reach out to us</a>.
+    </p>
+
+    <h5 id="feedback">I’d like to share some feedback about the website. Is this possible?</h5>
+    <p>
+        Absolutely! We welcome all feedback and we thank you for your time in doing so. To share feedback, please fill in this <a href="https://docs.google.com/forms/d/e/1FAIpQLSdypqToeSOW5LV0YLhIEX0ndY9oqs6_GM8Xhnf8-DTgI_TTLg/viewform">Google Form</a>.
+    </p>
+</section>
+
+{% endblock %}

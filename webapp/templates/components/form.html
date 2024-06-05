@@ -1,0 +1,8 @@
+{% load widget_tweaks %}
+{% load countries %}
+
+{% for field in form %}
+  <div class="form-group mb-4">
+  {% include 'components/formfield.html' %}
+  </div>
+{% endfor %}

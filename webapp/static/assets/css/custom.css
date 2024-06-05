@@ -1,0 +1,31 @@
+.image-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Take full height of parent, adjust as needed */
+}
+
+.img-constant-size {
+  width: auto; /* Keep original width or set a specific width */
+  max-width: 100%; /* Ensure it doesn't overflow the container */
+  height: auto; /* Adjust height automatically */
+  max-height: 100%; /* Ensure it doesn't exceed the container height */
+}
+.card:hover {
+    background-color: #f8f9fa; /* Light grey background on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.rounded-card-grey {
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    margin: 20px auto; /* Centering the card with automatic horizontal margins */
+    width: auto; /* Adjust width as needed, or use 'auto' for natural content width */
+    max-width: 100%; /* Ensuring the card does not exceed the container's width */
+}
+
+/* Optional: Adjust the size of the icons if needed */
+.btn .fas {
+  font-size: 1.2em; /* Adjust the size as needed */
+}

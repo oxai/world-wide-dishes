@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% load static %}
+{% load guest_user %}
+<meta charset="UTF-8">
+{% block title %}Leaderboard{% endblock %}
+{% block content %}
+    <script>
+        $(document).ready(function () {
+            // Function to load content for a tab
+            function loadTabContent(target) {
+                var url = '';
+                switch (target) {
+                    case '#language':
+                        // Adjust with the correct URL
+                        url = '{% url 'survey:country_dishes' %}';
+                        break;
+                    case '#daily':
+                        url = '{% url 'survey:daily_content' %}';
+                        break;
+                    case '#weekly':
+                        // Adjust with the correct URL
+                        url = '{% url 'survey:weekly_dishes'%}';
+                        break;
+                    // more cases as necessary
+                }
+
+                // Fetch content using AJAX
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function (data) {
+                        $(target).html(data); // Replace the content of the tab pane
+                    },
+                    error: function () {
+                        $(target).html('<p>An error has occurred</p>'); // Error handling
+                    }
+                });
+            }
+
+            // Load content for the initially active tab
+            loadTabContent('#language');
+
+            // Load content when a tab is shown
+            $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+                var target = $(e.target).data('bs-target'); // activated tab
+                loadTabContent(target);
+            });
+        });
+    </script>
+    <style>
+        .centered-nav {
+            display: flex;
+            justify-content: center; /* Center the nav tabs container */
+            margin-bottom: 1rem; /* Spacing between the title and the nav tabs */
+        }
+
+        .title-spacing {
+            text-align: center;
+            margin-bottom: 2rem; /* Spacing below the title */
+        }
+    </style>
+    <div class="container my-5" style="max-width: 768px">
+        <h2 class="title-spacing">Leaderboard</h2>
+        <!-- Nav tabs -->
+        <div class="centered-nav" role="navigation">
+            <ul class="nav nav-pills nav-fill justify-content-center" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="language-tab" data-bs-toggle="tab" data-bs-target="#language"
+                            type="button" role="tab" aria-controls="language" aria-selected="true">
+                        <i class="fas fa-globe"></i> Country
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="daily-tab" data-bs-toggle="tab" data-bs-target="#daily"
+                            type="button" role="tab" aria-controls="daily" aria-selected="false">
+                        <i class="fas fa-calendar-day"></i> Added Today
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="weekly-tab" data-bs-toggle="tab" data-bs-target="#weekly" type="button"
+                            role="tab" aria-controls="weekly" aria-selected="false">
+                        <i class="fas fa-calendar-week"></i> Past Week
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <!-- Tab panes -->
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane show active" id="language" role="tabpanel" aria-labelledby="language-tab">
+                <!-- Content for Language view goes here -->
+            </div>
+            <div class="tab-pane" id="daily" role="tabpanel" aria-labelledby="daily-tab">
+                <!-- Content for Daily view goes here -->
+            </div>
+            <div class="tab-pane" id="weekly" role="tabpanel" aria-labelledby="weekly-tab">
+                <!-- Content for Weekly view goes here -->
+            </div>
+        </div>
+        <hr />
+        <p>
+            Would you like to take part? Please check out the <a href="{% url 'pages:home' %}#how-to">how to contribute video</a> or
+            dive straight in and <a href="{% url 'survey:dish_list' %}">submit a dish</a>!
+        </p>
+    </div>
+{% endblock %}

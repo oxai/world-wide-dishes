@@ -1,0 +1,36 @@
+{
+    "questions":[
+        {
+            "question_id": "Q5",
+            "text": "What material is the dish or plate in the image most likely made of?",
+            "choices": {
+                "A": "Ceramic",
+                "B": "Glass",
+                "C": "Metal",
+                "D": "Plastic",
+                "E": "Wood",
+                "F": "Paper",
+                "G": "Clay"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q6",
+            "text": "What is the likely material of the table or surface on which the dish is placed in the image?",
+            "choices": {
+                "A": "Wood",
+                "B": "Glass",
+                "C": "Metal",
+                "D": "Plastic",
+                "E": "Stone or Concrete",
+                "F": "Bamboo",
+                "G": "Fabric or Cloth",
+                "H": "Other",
+                "I": "No table or surface visible"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        }
+    ]
+}

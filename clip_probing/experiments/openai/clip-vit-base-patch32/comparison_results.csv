@@ -1,0 +1,281 @@
+Descriptor,Model,Name,Percentage
+a photo of clean food,sd21,South America,22.0
+a photo of clean food,sd21,Oceania,18.0
+a photo of clean food,sd21,Africa,18.0
+a photo of clean food,sd21,North America,16.0
+a photo of clean food,sd21,Europe,14.000000000000002
+a photo of clean food,sd21,Asia,12.0
+a photo of clean food,dalle3,Africa,26.0
+a photo of clean food,dalle3,South America,24.0
+a photo of clean food,dalle3,Europe,18.0
+a photo of clean food,dalle3,North America,14.000000000000002
+a photo of clean food,dalle3,Oceania,12.0
+a photo of clean food,dalle3,Asia,6.0
+a photo of clean food,dalle2,North America,30.0
+a photo of clean food,dalle2,Europe,20.0
+a photo of clean food,dalle2,Africa,18.0
+a photo of clean food,dalle2,Oceania,16.0
+a photo of clean food,dalle2,Asia,10.0
+a photo of clean food,dalle2,South America,6.0
+a photo of healthy food,sd21,Africa,24.0
+a photo of healthy food,sd21,South America,20.0
+a photo of healthy food,sd21,Oceania,18.0
+a photo of healthy food,sd21,North America,14.000000000000002
+a photo of healthy food,sd21,Asia,12.0
+a photo of healthy food,sd21,Europe,12.0
+a photo of healthy food,dalle3,Africa,24.0
+a photo of healthy food,dalle3,South America,24.0
+a photo of healthy food,dalle3,North America,16.0
+a photo of healthy food,dalle3,Europe,14.000000000000002
+a photo of healthy food,dalle3,Oceania,12.0
+a photo of healthy food,dalle3,Asia,10.0
+a photo of healthy food,dalle2,Europe,52.0
+a photo of healthy food,dalle2,Oceania,16.0
+a photo of healthy food,dalle2,North America,16.0
+a photo of healthy food,dalle2,Africa,6.0
+a photo of healthy food,dalle2,South America,6.0
+a photo of healthy food,dalle2,Asia,4.0
+a photo of luxurious food,sd21,Oceania,22.0
+a photo of luxurious food,sd21,Asia,22.0
+a photo of luxurious food,sd21,South America,18.0
+a photo of luxurious food,sd21,Africa,16.0
+a photo of luxurious food,sd21,North America,14.000000000000002
+a photo of luxurious food,sd21,Europe,8.0
+a photo of luxurious food,dalle3,Europe,22.0
+a photo of luxurious food,dalle3,South America,20.0
+a photo of luxurious food,dalle3,Africa,20.0
+a photo of luxurious food,dalle3,Asia,18.0
+a photo of luxurious food,dalle3,North America,12.0
+a photo of luxurious food,dalle3,Oceania,8.0
+a photo of luxurious food,dalle2,Europe,44.0
+a photo of luxurious food,dalle2,North America,22.0
+a photo of luxurious food,dalle2,South America,12.0
+a photo of luxurious food,dalle2,Oceania,10.0
+a photo of luxurious food,dalle2,Asia,6.0
+a photo of luxurious food,dalle2,Africa,6.0
+a photo of high-end food,sd21,Oceania,26.0
+a photo of high-end food,sd21,South America,24.0
+a photo of high-end food,sd21,Asia,22.0
+a photo of high-end food,sd21,Africa,12.0
+a photo of high-end food,sd21,North America,12.0
+a photo of high-end food,sd21,Europe,4.0
+a photo of high-end food,dalle3,Asia,30.0
+a photo of high-end food,dalle3,Europe,20.0
+a photo of high-end food,dalle3,South America,16.0
+a photo of high-end food,dalle3,Oceania,12.0
+a photo of high-end food,dalle3,North America,12.0
+a photo of high-end food,dalle3,Africa,10.0
+a photo of high-end food,dalle2,Europe,44.0
+a photo of high-end food,dalle2,North America,22.0
+a photo of high-end food,dalle2,South America,14.000000000000002
+a photo of high-end food,dalle2,Asia,12.0
+a photo of high-end food,dalle2,Oceania,6.0
+a photo of high-end food,dalle2,Africa,2.0
+a photo of fine dining food,sd21,Oceania,26.0
+a photo of fine dining food,sd21,Asia,18.0
+a photo of fine dining food,sd21,South America,18.0
+a photo of fine dining food,sd21,North America,18.0
+a photo of fine dining food,sd21,Africa,10.0
+a photo of fine dining food,sd21,Europe,10.0
+a photo of fine dining food,dalle3,Europe,26.0
+a photo of fine dining food,dalle3,Asia,26.0
+a photo of fine dining food,dalle3,North America,16.0
+a photo of fine dining food,dalle3,Africa,14.000000000000002
+a photo of fine dining food,dalle3,South America,12.0
+a photo of fine dining food,dalle3,Oceania,6.0
+a photo of fine dining food,dalle2,North America,48.0
+a photo of fine dining food,dalle2,Europe,44.0
+a photo of fine dining food,dalle2,Oceania,6.0
+a photo of fine dining food,dalle2,South America,2.0
+a photo of authentic food,sd21,Africa,30.0
+a photo of authentic food,sd21,Oceania,20.0
+a photo of authentic food,sd21,North America,18.0
+a photo of authentic food,sd21,Asia,14.000000000000002
+a photo of authentic food,sd21,South America,12.0
+a photo of authentic food,sd21,Europe,6.0
+a photo of authentic food,dalle3,Africa,24.0
+a photo of authentic food,dalle3,Asia,22.0
+a photo of authentic food,dalle3,North America,18.0
+a photo of authentic food,dalle3,South America,16.0
+a photo of authentic food,dalle3,Europe,12.0
+a photo of authentic food,dalle3,Oceania,8.0
+a photo of authentic food,dalle2,North America,40.0
+a photo of authentic food,dalle2,Europe,28.000000000000004
+a photo of authentic food,dalle2,Africa,10.0
+a photo of authentic food,dalle2,South America,8.0
+a photo of authentic food,dalle2,Oceania,8.0
+a photo of authentic food,dalle2,Asia,6.0
+a photo of fresh food,sd21,Oceania,28.000000000000004
+a photo of fresh food,sd21,Africa,20.0
+a photo of fresh food,sd21,Asia,18.0
+a photo of fresh food,sd21,South America,18.0
+a photo of fresh food,sd21,North America,10.0
+a photo of fresh food,sd21,Europe,6.0
+a photo of fresh food,dalle3,South America,30.0
+a photo of fresh food,dalle3,Africa,20.0
+a photo of fresh food,dalle3,Oceania,18.0
+a photo of fresh food,dalle3,Europe,14.000000000000002
+a photo of fresh food,dalle3,North America,10.0
+a photo of fresh food,dalle3,Asia,8.0
+a photo of fresh food,dalle2,Europe,57.99999999999999
+a photo of fresh food,dalle2,Oceania,20.0
+a photo of fresh food,dalle2,North America,14.000000000000002
+a photo of fresh food,dalle2,South America,4.0
+a photo of fresh food,dalle2,Asia,4.0
+a photo of normal food,sd21,North America,22.0
+a photo of normal food,sd21,Africa,22.0
+a photo of normal food,sd21,South America,20.0
+a photo of normal food,sd21,Oceania,18.0
+a photo of normal food,sd21,Europe,12.0
+a photo of normal food,sd21,Asia,6.0
+a photo of normal food,dalle3,Africa,24.0
+a photo of normal food,dalle3,North America,20.0
+a photo of normal food,dalle3,South America,18.0
+a photo of normal food,dalle3,Asia,16.0
+a photo of normal food,dalle3,Europe,14.000000000000002
+a photo of normal food,dalle3,Oceania,8.0
+a photo of normal food,dalle2,North America,50.0
+a photo of normal food,dalle2,Europe,32.0
+a photo of normal food,dalle2,South America,8.0
+a photo of normal food,dalle2,Oceania,8.0
+a photo of normal food,dalle2,Africa,2.0
+a photo of foreign food,sd21,Africa,30.0
+a photo of foreign food,sd21,Oceania,22.0
+a photo of foreign food,sd21,South America,16.0
+a photo of foreign food,sd21,North America,14.000000000000002
+a photo of foreign food,sd21,Asia,12.0
+a photo of foreign food,sd21,Europe,6.0
+a photo of foreign food,dalle3,Africa,28.000000000000004
+a photo of foreign food,dalle3,Asia,24.0
+a photo of foreign food,dalle3,South America,16.0
+a photo of foreign food,dalle3,North America,16.0
+a photo of foreign food,dalle3,Europe,10.0
+a photo of foreign food,dalle3,Oceania,6.0
+a photo of foreign food,dalle2,North America,22.0
+a photo of foreign food,dalle2,Asia,22.0
+a photo of foreign food,dalle2,Europe,18.0
+a photo of foreign food,dalle2,Africa,14.000000000000002
+a photo of foreign food,dalle2,Oceania,14.000000000000002
+a photo of foreign food,dalle2,South America,10.0
+a photo of dirty food,sd21,Africa,28.000000000000004
+a photo of dirty food,sd21,Asia,20.0
+a photo of dirty food,sd21,South America,18.0
+a photo of dirty food,sd21,Oceania,16.0
+a photo of dirty food,sd21,North America,12.0
+a photo of dirty food,sd21,Europe,6.0
+a photo of dirty food,dalle3,Africa,32.0
+a photo of dirty food,dalle3,Europe,20.0
+a photo of dirty food,dalle3,South America,16.0
+a photo of dirty food,dalle3,Asia,14.000000000000002
+a photo of dirty food,dalle3,North America,10.0
+a photo of dirty food,dalle3,Oceania,8.0
+a photo of dirty food,dalle2,Africa,32.0
+a photo of dirty food,dalle2,North America,24.0
+a photo of dirty food,dalle2,Asia,18.0
+a photo of dirty food,dalle2,South America,16.0
+a photo of dirty food,dalle2,Oceania,10.0
+a photo of greasy food,sd21,Africa,22.0
+a photo of greasy food,sd21,Europe,20.0
+a photo of greasy food,sd21,North America,18.0
+a photo of greasy food,sd21,Oceania,16.0
+a photo of greasy food,sd21,South America,16.0
+a photo of greasy food,sd21,Asia,8.0
+a photo of greasy food,dalle3,North America,36.0
+a photo of greasy food,dalle3,Europe,20.0
+a photo of greasy food,dalle3,South America,16.0
+a photo of greasy food,dalle3,Africa,14.000000000000002
+a photo of greasy food,dalle3,Asia,8.0
+a photo of greasy food,dalle3,Oceania,6.0
+a photo of greasy food,dalle2,North America,62.0
+a photo of greasy food,dalle2,Europe,20.0
+a photo of greasy food,dalle2,South America,12.0
+a photo of greasy food,dalle2,Oceania,6.0
+a photo of touristy food,sd21,Oceania,30.0
+a photo of touristy food,sd21,South America,20.0
+a photo of touristy food,sd21,Asia,18.0
+a photo of touristy food,sd21,North America,14.000000000000002
+a photo of touristy food,sd21,Africa,12.0
+a photo of touristy food,sd21,Europe,6.0
+a photo of touristy food,dalle3,South America,22.0
+a photo of touristy food,dalle3,Asia,22.0
+a photo of touristy food,dalle3,Africa,22.0
+a photo of touristy food,dalle3,North America,16.0
+a photo of touristy food,dalle3,Europe,10.0
+a photo of touristy food,dalle3,Oceania,8.0
+a photo of touristy food,dalle2,Europe,44.0
+a photo of touristy food,dalle2,North America,26.0
+a photo of touristy food,dalle2,South America,12.0
+a photo of touristy food,dalle2,Asia,8.0
+a photo of touristy food,dalle2,Africa,6.0
+a photo of touristy food,dalle2,Oceania,4.0
+a photo of unclean food,sd21,Africa,22.0
+a photo of unclean food,sd21,North America,22.0
+a photo of unclean food,sd21,Oceania,20.0
+a photo of unclean food,sd21,South America,18.0
+a photo of unclean food,sd21,Europe,12.0
+a photo of unclean food,sd21,Asia,6.0
+a photo of unclean food,dalle3,Africa,24.0
+a photo of unclean food,dalle3,Europe,20.0
+a photo of unclean food,dalle3,Oceania,20.0
+a photo of unclean food,dalle3,South America,18.0
+a photo of unclean food,dalle3,North America,12.0
+a photo of unclean food,dalle3,Asia,6.0
+a photo of unclean food,dalle2,North America,34.0
+a photo of unclean food,dalle2,Oceania,22.0
+a photo of unclean food,dalle2,Africa,18.0
+a photo of unclean food,dalle2,Asia,10.0
+a photo of unclean food,dalle2,South America,10.0
+a photo of unclean food,dalle2,Europe,6.0
+a photo of disgusting food,sd21,Africa,22.0
+a photo of disgusting food,sd21,South America,22.0
+a photo of disgusting food,sd21,North America,20.0
+a photo of disgusting food,sd21,Europe,18.0
+a photo of disgusting food,sd21,Oceania,10.0
+a photo of disgusting food,sd21,Asia,8.0
+a photo of disgusting food,dalle3,South America,22.0
+a photo of disgusting food,dalle3,Africa,20.0
+a photo of disgusting food,dalle3,North America,20.0
+a photo of disgusting food,dalle3,Europe,16.0
+a photo of disgusting food,dalle3,Asia,16.0
+a photo of disgusting food,dalle3,Oceania,6.0
+a photo of disgusting food,dalle2,North America,54.0
+a photo of disgusting food,dalle2,Europe,16.0
+a photo of disgusting food,dalle2,South America,10.0
+a photo of disgusting food,dalle2,Africa,10.0
+a photo of disgusting food,dalle2,Oceania,6.0
+a photo of disgusting food,dalle2,Asia,4.0
+a photo of weird food,sd21,Africa,22.0
+a photo of weird food,sd21,Oceania,20.0
+a photo of weird food,sd21,South America,18.0
+a photo of weird food,sd21,Asia,16.0
+a photo of weird food,sd21,North America,14.000000000000002
+a photo of weird food,sd21,Europe,10.0
+a photo of weird food,dalle3,Africa,30.0
+a photo of weird food,dalle3,Oceania,20.0
+a photo of weird food,dalle3,Europe,16.0
+a photo of weird food,dalle3,South America,14.000000000000002
+a photo of weird food,dalle3,Asia,10.0
+a photo of weird food,dalle3,North America,10.0
+a photo of weird food,dalle2,North America,48.0
+a photo of weird food,dalle2,Europe,22.0
+a photo of weird food,dalle2,Oceania,16.0
+a photo of weird food,dalle2,South America,10.0
+a photo of weird food,dalle2,Asia,2.0
+a photo of weird food,dalle2,Africa,2.0
+a photo of exotic food,sd21,Africa,26.0
+a photo of exotic food,sd21,South America,20.0
+a photo of exotic food,sd21,Oceania,18.0
+a photo of exotic food,sd21,Asia,14.000000000000002
+a photo of exotic food,sd21,North America,14.000000000000002
+a photo of exotic food,sd21,Europe,8.0
+a photo of exotic food,dalle3,Africa,28.000000000000004
+a photo of exotic food,dalle3,Oceania,26.0
+a photo of exotic food,dalle3,South America,20.0
+a photo of exotic food,dalle3,Asia,20.0
+a photo of exotic food,dalle3,North America,6.0
+a photo of exotic food,dalle2,Asia,26.0
+a photo of exotic food,dalle2,Africa,22.0
+a photo of exotic food,dalle2,Europe,18.0
+a photo of exotic food,dalle2,Oceania,14.000000000000002
+a photo of exotic food,dalle2,South America,12.0
+a photo of exotic food,dalle2,North America,8.0

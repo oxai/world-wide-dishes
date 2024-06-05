@@ -1,0 +1,25 @@
+{% load i18n static %}
+<div class="related-widget-wrapper">
+    {{ widget }}
+
+    {% if edit_related_url %}
+    <a class="related-widget-wrapper-link change-related" id="change_id_{{ name }}"
+        href=""
+        data-href-template="{{ edit_related_url }}?{{ url_params }}"
+        title="{% blocktrans %}Change selected {{ model }}{% endblocktrans %}"
+        data-popup="yes">
+        <img src="{% static edit_icon %}" alt="{% trans 'Edit' %}"/>
+        <small style="color: #333;">edit {{ name }}</small>
+    </a>
+    {% endif %}
+
+    {% if add_related_url %}
+    <a class="related-widget-wrapper-link add-related" id="add_id_{{ name }}"
+        href="{{ add_related_url }}?{{ url_params }}"
+        title="{% blocktrans %}Add another {{ model }}{% endblocktrans %}"
+        data-popup="yes">
+        <img src="{% static add_icon %}" alt="{% trans 'Add' %}"/>
+        <small style="color: #333;">add {{ name }}</small>
+    </a>
+    {% endif %}
+</div>

@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="py-5"
+         style="background: #eeeeff;
+         align-items: center;
+         display: flex;
+         background-image: url('{% static '/assets/img/fruitveg-bg.jpg' %}');
+         background-size: auto 100%;
+">
+    <div class="container">
+            <div class="p-3 text-center">
+                <h1 class="mb-4 d-inline-flex align-items-center"><img src="{% static '/assets/img/food_globe_small.jpg' %}" style="width: 1em; border-radius: 50%" class="m-3"/>World Wide Dishes</h1>
+                <h3>Exploring cultural representations in AI through food!</h3>
+            </div>
+            <div class="text-center p-2">
+                <a href="{% url 'survey:leaderboard' %}" class="btn btn-success p-3 m-1">Check out our food leaderboard!</a>
+                <a href="{% url 'survey:dish_list' %}" class="btn btn-primary p-3 m-1">Add your local dish!</a>
+                <p id="countdown" style="font-size: 22px"></p>
+            </div>
+            </div>
+    </div>
+</section>
+<section class="container pt-3 pb-5">
+    <h2 class="p-3 text-center">Getting Started</h2>
+    <p>
+        We are a group of volunteer researchers who want to learn more about how people in different parts of the world experience technology powered by Artificial Intelligence (AI).
+    </p>
+    <p>
+        <a href="{% url 'pages:faq' %}#food">We know that food</a> is a wonderful lens into our experiences, cultures, and perspectives. However, the capability of generative AI systems to accurately reflect this diversity is often limited. Our project aims to understand how various cultures engage with and perceive food, with the goal of identifying whose experiences are inadequately represented or overly present in current AI systems.
+    </p>
+    <p>
+        <b>This is where YOU can help:</b> by sharing a bit about the food you’re familiar with and associate with your home(s) and culture(s). You’ll be asked to share some information about the food, its cultural and historical associations and potentially a personal photo of the food. We anticipate a time commitment of 5-10 minutes and <b><a href="{% url 'pages:faq' %}#credit">all contributions will be acknowledged</a></b> in public releases and the top 30% of contributors will also receive a certificate.
+    </p>
+    {% if not user.is_authenticated %}
+    <p>
+        Are you interested in finding out more?
+    </p>
+
+    <div class="text-center p-2">
+        <a href="{% url 'survey:home' %}" class="btn btn-primary p-3 m-1">Yes, I'm interested</a>
+        <a href="{% url 'survey:thank_you_no_consent' %}" class="btn btn-secondary p-3 m-1">No, thank you</a>
+    </div>
+    {% else %}
+    <div class="text-center p-2">
+        <a href="{% url 'survey:dish_list' %}" class="btn btn-success p-3 m-1">Take me to the "add dish" section directly!</a>
+        <a href="{% url 'survey:home' %}" class="btn btn-primary p-3 m-1">Start food form from the beginning</a>
+    </div>
+    {% endif %}
+</section>
+
+<section class="py-5" id="how-to" style="background: #dcc0be">
+    <h2 class="p-3 text-center" style="color: #48210b">How to contribute</h2>
+    <div class="container text-center">
+    <iframe width="80%" style="aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/hbJIY1Y5Xhs?si=4-z5qYqKvaTa27uS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</section>
+<section class="py-5" style="background: #fff4ee">
+    <br class="anchor" id="about" />
+    <div class="container">
+        <h2 class="p-5 text-center">Who are we?</h2>
+        <p>
+            We are a research team with a shared passion for ensuring AI is used in a way that is fair for, and representative of, all who use it.
+        </p>
+
+        <div class="row justify-content-center">
+            {% for member in members %}
+            <div class="col-md-4 col-sm-6 my-3 member-profile text-center">
+                <img src="{% static '/assets/img/team/' %}{{ member.img }}" title="" alt="">
+                <div>{{ member.name }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="container py-5">
+    <h2 class="p-5 text-center">Why is it important to understand the representation of food in AI?</h2>
+    <p>
+        AI systems are becoming a part of our daily lives at an incredibly fast rate! They are used in all sorts of systems, such as search engines, captioning systems and the image and text generators that are gaining more and more popularity.
+    </p>
+    <p>
+        However, while these systems are increasing their capabilities, there is increasing concern that their outputs and capabilities are not equally good for everyone.  We are interacting with these systems more and more in our daily lives, and the potential of AI to shape our perspectives in the world is increasing! Given how connected we are to these AI models, it is important that we ensure they are closely monitored and continuously improved. It is essential that they capture all the wonderful diversity and creativity in our world.
+    </p>
+    <p>
+        We believe one of the best ways to ensure this diversity is captured is to create ways for many people to be able to contribute. AI relies on human input to ‘learn’, so it’s important that it learns from people of many different backgrounds. That is where we come in with this website:
+        we hope to reach as many people as possible and encourage them to fill in this form to help us create a more diverse dataset to support AI research that is representative of our diverse and dynamic world!
+    </p>
+    <p>
+        This is where you come in! By participating in this project, you can help share information about your experiences as shaped by your home(s) and culture(s). We have chosen FOOD as a lens into this experience. Food is a huge part of all our lives and has the ability to reflect a bit about our social lives.
+    </p>
+</section>
+
+{% endblock %}
+
+
+{% block extrascript %}
+<script>
+// Set the date we're counting down to
+var countDownDate = Date.UTC(2024, 3, 21, 12, 0, 0);
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("countdown").innerHTML = "Submission closes in " + days + " days " + hours + "h "
+  + minutes + "m " + seconds + "s";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = ""
+  }
+}, 1000);
+</script>
+{% endblock %}

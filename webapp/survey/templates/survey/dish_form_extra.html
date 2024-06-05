@@ -1,0 +1,105 @@
+{% extends "survey/base.html" %}
+{% load guest_user %}
+{% load static %}
+{% block title %}Dish{% endblock %}
+{% block extrastyle %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+{% endblock %}
+{% block subtitle %}Step 2: Tell us about food!{% endblock %}
+{% block subcontent %}
+
+    <div class="my-4">
+        <p>Thank you for telling us about <b>{{ dish.english_name }} / {{ dish.local_name }}</b>!</p>
+        <p>
+            The following questions are completely optional,
+            but we encourage you to consider providing some answers as the questions are designed to help us capture
+            more knowledge about the dish that may not be known to foreigners, and/or may not be easily available on the
+            Internet.
+        </p>
+        <form method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group mb-5">
+                    {% if field.name == 'image_url' %}
+                        {% if not dish.image %}
+                            {% include 'components/formfield.html' %}
+                            <div id="image-container" class="image-container mb-2" style="display: none;">
+                                <img id="image-preview" src="" alt="Image preview" style="text-align:center; max-width: 100%; max-height: 200px; display: none; margin-top: 10px;"/>
+                                <div>
+                                    <button id="clear-image-url" class="btn clear-btn btn-outline-secondary" type="button" style="margin-top: 10px;">
+                                        <i class="fas fa-times"></i> Clear
+                                    </button>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% elif field.name == "image_details" %}
+                        {% if dish.image %}
+                            <div style="display: none">
+                            <!-- This is to ensure that the image details field is included in any update POST without being erased -->
+                            {% include 'components/formfield.html' %}
+                            </div>
+                        {% else %}
+                            <p><b>Photo caption</b></p>
+                            <p>
+                               We'd love for you to describe everything in the image you have shared. We ask that you explain everything in the image as if you are describing it to someone who can’t see the image. You can also think about it as if how you would want to caption the image to help a machine understand.
+                            </p>
+                            {% include 'components/formfield.html' %}
+                            <small>
+                                For an example of how to fill this in, please see these examples of Àmàlà (yam flour) from
+                                Nigeria, and Soba in hot broth (Kake-soba) with tempura (天かけそば ) from Japan: <a
+                                    href="#image-example" data-bs-toggle="collapse" data-bs-target="#image-example">[Show
+                                example]</a>
+                            </small>
+                            <div id="image-example" class="collapse mb-4">
+                                <img src="{% static 'assets/img/alt_text_example.jpg' %}" class="img-fluid"
+                                     alt="The left-hand image shows a bowl with Àmàlà (yam flour), blackish and solid, with Ewédú (Jute leaves) soup with Iru (locust beans). The Ewédú is greenish in color. In the image, there is also blended tomato sauce with Ata Rodo (scotch bonnet), reddish in color and two small beef.
+                  The right-hand image shows buckwheat noodles (soba) served with Tempura. The soba in a bowl of warm broth of dipping sauce to the right. Tempura of a variety of vegetables and shrimp is behind a small bowl of tempura dipping sauce on the left. In the centre there is a small plate of cut spring onions, next to a pair of chopsticks."/>
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        {% include 'components/formfield.html' %}
+                    {% endif %}
+                </div>
+
+            {% endfor %}
+            <a href="{% url 'survey:dish_update_details' pk=dish.id %}" class="btn btn-outline-secondary m-1">Back</a>
+            <button type="submit" class="btn btn-primary m-1">Save and continue</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var imageUrlInput = document.querySelector('input[name="image_url"]'); // Make sure the selector matches your input field's name attribute
+            var imagePreview = document.getElementById('image-preview');
+            var clearButton = document.getElementById('clear-image-url');
+            var imageContainer = document.getElementById('image-container')
+
+            // Function to handle updating the image preview
+            function updateImagePreview() {
+                var url = imageUrlInput.value.trim();
+                if (url.match(/\.(jpeg|jpg|gif|png)$/i) !== null) {
+                    imagePreview.src = url;
+                    imagePreview.style.display = 'block';
+                    imageContainer.style.display = 'block'
+                } else {
+                    imagePreview.src = '';
+                    imagePreview.style.display = 'none'; // Hide the image preview if the URL is not an image or is empty
+                    imageContainer.style.display = 'none'
+                }
+            }
+
+            // Event listener for paste events
+            imageUrlInput.addEventListener('paste', function (e) {
+                setTimeout(updateImagePreview, 100); // Timeout to allow paste event to complete
+            });
+
+            // Event listener for input events (covers typing, pasting, and clearing the input)
+            imageUrlInput.addEventListener('input', updateImagePreview);
+
+            clearButton.addEventListener('click', function () {
+                imageUrlInput.value = ''; // Clear the input
+                updateImagePreview(); // Update the preview accordingly
+            });
+        });
+    </script>
+{% endblock %}

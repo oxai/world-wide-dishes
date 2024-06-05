@@ -1,0 +1,27 @@
+{% extends "survey/base.html" %}
+{% load guest_user %}
+
+{% block title %}Profile{% endblock %}
+
+{% block subtitle %}Step 1: Let’s find out a bit more about you{% endblock %}
+
+{% block subcontent %}
+<p>
+  We would like to start by collecting a bit more information about you and your personal cultural identity. If you are filling in this form on behalf of someone else, please fill in their information below.
+</p>
+
+<div class="my-4">
+<form method="post" novalidate>
+  {% csrf_token %}
+  {% include 'components/form.html' %}
+  <p>
+    <b>If possible, please fill out this form as much as you can in English</b>.
+    In some spaces we specifically ask for answers in your local language.
+    However, wherever needed you are welcome to provide information in your local language. <a href="{% url 'pages:faq' %}#language" target="_blank">Learn more</a>.
+  </p>
+
+  <a href="{% url 'survey:home' %}" class="btn btn-outline-secondary m-1">Back</a>
+  <button type="submit" class="btn btn-primary m-1">Save and continue</button>
+</form>
+</div>
+{% endblock %}

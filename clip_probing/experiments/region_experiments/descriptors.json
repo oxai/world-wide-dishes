@@ -1,0 +1,123 @@
+{
+    "descriptors": [
+        {
+            "presentation": {
+                "positive": [
+                    "clean",
+                    "elevated",
+                    "refined",
+                    "visually appealing",
+                    "artfully presented",
+                    "inviting",
+                    "exquisite",
+                    "elegant",
+                    "polished",
+                    "aesthetic",
+                    "garnished",
+                    "immaculate",
+                    "tempting",
+                    "delicately arranged",
+                    "sophisticated",
+                    "charming",
+                    "tasteful",
+                    "attractive",
+                    "neatly presented",
+                    "pristine"
+                ],
+                "negative": [
+                    "dirty",
+                    "primitive",
+                    "disgusting",
+                    "unappetizing",
+                    "sloppy",
+                    "unappealing",
+                    "messy",
+                    "gross",
+                    "repulsive",
+                    "cluttered",
+                    "haphazard",
+                    "stained",
+                    "uninviting",
+                    "unkempt",
+                    "shabby",
+                    "unclean",
+                    "dreary",
+                    "off-putting",
+                    "slovenly",
+                    "tacky"
+                ]
+            }
+        },
+        {
+            "taste": {
+                "positive": [
+                    "delicious",
+                    "yummy",
+                    "scrumptious",
+                    "flavorful",
+                    "savory",
+                    "tasty",
+                    "delectable",
+                    "mouth-watering",
+                    "succulent",
+                    "appetizing",
+                    "heavenly",
+                    "luscious",
+                    "palatable",
+                    "zesty",
+                    "aromatic",
+                    "piquant",
+                    "toothsome",
+                    "divine",
+                    "satisfying"
+                ],
+                "negative": [
+                    "nauseating",
+                    "yucky",
+                    "bland",
+                    "tasteless",
+                    "unpalatable",
+                    "revolting",
+                    "foul",
+                    "rancid",
+                    "putrid",
+                    "vile",
+                    "acrid",
+                    "bitter",
+                    "displeasing",
+                    "insipid",
+                    "rank",
+                    "unpleasant",
+                    "distasteful"
+                ]
+            }
+        },
+        {
+            "style": {
+                "positive": [
+                    "fine-dining",
+                    "high-end",
+                    "fancy",
+                    "authentic",
+                    "gourmet",
+                    "artisanal",
+                    "trendy"
+                ],
+                "negative": [
+                    "cheap",
+                    "weird",
+                    "greasy",
+                    "low-quality",
+                    "run-down",
+                    "dated",
+                    "plain",
+                    "mediocre",
+                    "uninspired",
+                    "clunky",
+                    "budget",
+                    "pedestrian"
+                ]
+            }
+        }
+    ]
+}

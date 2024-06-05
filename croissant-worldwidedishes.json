@@ -1,0 +1,360 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "column": "ml:column",
+    "data": {
+      "@id": "ml:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "ml:dataType",
+      "@type": "@vocab"
+    },
+    "extract": "ml:extract",
+    "field": "ml:field",
+    "fileProperty": "ml:fileProperty",
+    "format": "ml:format",
+    "includes": "ml:includes",
+    "isEnumeration": "ml:isEnumeration",
+    "jsonPath": "ml:jsonPath",
+    "ml": "http://mlcommons.org/schema/",
+    "parentField": "ml:parentField",
+    "path": "ml:path",
+    "recordSet": "ml:recordSet",
+    "references": "ml:references",
+    "regex": "ml:regex",
+    "repeated": "ml:repeated",
+    "replace": "ml:replace",
+    "sc": "https://schema.org/",
+    "separator": "ml:separator",
+    "source": "ml:source",
+    "subField": "ml:subField",
+    "transform": "ml:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "WorldWideDishes",
+  "description": "WORLD WIDE DISHES is a mixed image and text food dataset, collected purely through human contribution and decentralised means, by creating a website widely distributed through social networks. The resulting dataset is a collection of 765 dishes, with dish names collected in 135 local languages. ",
+  "citation": "@dataset{magomere_2024,\n  author       = {Magomere, Jabez and\n                  Ishida, Shu and\n                  Afonja, Tejumade and\n                  Salama, Aya and\n                  Kochin, Daniel and\n                  Yuehgoh, Foutse and\n                  Hamzaoui, Image and\n                  Sefala, Raesetje and\n                  Aalagib, Aisha and\n                  Semenova, Elizaveta and\n                  Crais, Lauren and\n                  Mackenzie Hall, Siobhan},\n  title        = {World Wide Dishes},\n  month        = June,\n  year         = 2024,\n  publisher    = {Github},\n  version      = 1,\n  url          = {https://github.com/oxai/mt23-culture-bias-wip/blob/main/data/WorldWideDishes_2024_June_World_Wide_Dishes.csv}\n}",
+  "license": "cc-by-nc-sa-4.0",
+  "url": "https://github.com/oxai/world-wide-dishes/tree/main/data",
+  "version": "1.0.0",
+  "distribution": [
+    {
+      "@type": "sc:FileObject",
+      "name": "WorldWideDishes_2024_June_World_Wide_Dishes",
+      "contentSize": "358 KB",
+      "contentUrl": "https://raw.githubusercontent.com/oxai/world-wide-dishes/main/data/WorldWideDishes_2024_June_World_Wide_Dishes.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "bf5ecc0dd1ee791df2a1c6f4934ad53743cf04a4242073d88b0de77e67c9fd8b"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "ml:RecordSet",
+      "name": "default",
+      "field": [
+        {
+          "@type": "ml:Field",
+          "name": "id",
+          "description": "unique identifier",
+          "dataType": "sc:Integer",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "id"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "local_name",
+          "description": "name of dish in local language",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "local_name"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "english_name",
+          "description": "name of dish in English (if available) or a phonetic approximation thereof",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "english_name"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "language",
+          "description": "name of local language",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "language"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "language_code",
+          "description": "associated language code",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "language_code"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "countries",
+          "description": "country(ies) associated with the dish",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "countries"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "continent",
+          "description": "continent(s) associated with the dish",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "continent"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "regions",
+          "description": "region(s) associated with the dish",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "regions"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "cultures",
+          "description": "cultural, social, or ethnic group(s) associated with the dish",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "cultures"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "time_of_day",
+          "description": "time of day the dish is eaten",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "time_of_day"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "time_of_day_more",
+          "description": "more information about time of day the dish is eaten",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "time_of_day_more"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "type_of_dish",
+          "description": "type of dish",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "type_of_dish"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "type_of_dish_more",
+          "description": "more information about type of dish",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "type_of_dish_more"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "utensils",
+          "description": "utensils used to eat the dish",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "utensils"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "drink",
+          "description": "beverages typically drunk with the dish",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "drink"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "occasions",
+          "description": "circumstances under which the dish is eaten, such as a special occassion",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "occasions"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "occasions_more",
+          "description": "more information about circumstances under which the dish is eaten",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "occasions_more"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "ingredients",
+          "description": "ingredients of the dish",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "ingredients"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "recipe",
+          "description": "URL to a third-party website with a relevant recipe",
+          "dataType": "sc:URL",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "recipe"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "more_details",
+          "description": "any further information that the contributor considers relevant about the dish",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "more_details"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "public_cc_image_url",
+          "description": "URL of an image shared online with a CC-BY license",
+          "dataType": "sc:URL",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "public_cc_image_url"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "public_cc_image_caption",
+          "description": "caption of the CC-BY license image",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "public_cc_image_caption"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "uploaded_image_name",
+          "description": "personal photograph of the dish (to be used only for research purposes)",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "uploaded_image_name"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "uploaded_image_url",
+          "description": "URL of personal photograph of the dish",
+          "dataType": "sc:URL",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "uploaded_image_url"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "uploaded_image_caption",
+          "description": "caption of personal photograph of the dish",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "WorldWideDishes_2024_June_World_Wide_Dishes",
+            "extract": {
+              "column": "uploaded_image_caption"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

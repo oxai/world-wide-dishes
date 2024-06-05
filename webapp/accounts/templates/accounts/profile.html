@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load guest_user %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+  <div class="container my-5" style="max-width: 768px">
+    {% block messages %}
+      {% if messages %}
+        <ul class="messagelist">{% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|capfirst }}</li>
+        {% endfor %}</ul>
+      {% endif %}
+    {% endblock messages %}
+    <h4 class="my-4">Your responses</h4>
+    <p>This is the form where you told us about food. Please feel free to edit or add to your answers.</p>
+    <a href="{% url 'survey:profile' %}" class="btn btn-primary">Go to food form</a>
+    <hr />
+    <h4 class="my-4">Your profile</h4>
+    {% if not user|is_guest_user %}
+      <p>Update your profile information.</p>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {% include 'components/form.html' %}
+        <button type="submit" class="btn btn-primary">Update profile</button>
+      </form>
+      <hr />
+    {% endif %}
+    <a href="{% url 'password_change' %}" class="btn btn-outline-secondary">Change password</a>
+    <hr />
+    <h6>Deleting your information</h6>
+    <p>
+      You are welcome to edit or delete your personal information. There are various ways to do this, depending on when you choose to do so. If you’d like to delete your information before 15 April 2024, you can do so below.
+    </p>
+    <p>
+      More information about withdrawing your data can be found <a href="{% url 'pages:data_protection' %}">here</a>.
+    </p>
+    <a href="{% url 'accounts:delete_user' %}" class="btn btn-outline-danger"
+          onclick="return confirm('This action will delete your account and all your data. Are you sure you want to proceed?');">Delete account and data</a>
+  </div>
+{% endblock %}

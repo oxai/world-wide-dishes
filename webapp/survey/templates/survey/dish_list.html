@@ -1,0 +1,124 @@
+{% extends "survey/base.html" %}
+
+{% load static %}
+{% load i18n static %}
+{% load guest_user %}
+{% load custom_filters %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+    />
+{% endblock %}
+
+{% block title %}Dish{% endblock %}
+{% block subtitle %}Step 2: Tell us about food!{% endblock %}
+
+{% block subcontent %}
+    <div class="my-4">
+        <p>
+            We are so excited to learn more about your food and culture(s)!
+        </p>
+        <p>
+            We would like you to think of a dish of food you consider to be a part of your cultural background, or of
+            one of your cultural backgrounds (if you have multiple). We understand that a dish or food might connect to
+            multiple cultural heritages; we are primarily interested in your personal connection to the dish or food.
+        </p>
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {% include 'components/form.html' %}
+            <a href="{% url 'survey:profile' %}" class="btn btn-outline-secondary m-1">Back</a>
+            {% if dishes %}
+                <a href="{% url 'survey:dish_create' %}" class="btn btn-success m-1">Add more dishes</a>
+                <a href="{% url 'survey:dish_review' %}" class="btn btn-primary m-1">Review dishes</a>
+            {% else %}
+                <a href="{% url 'survey:dish_create' %}" class="btn btn-success m-1">Add a new dish</a>
+            {% endif %}
+        </form>
+    </div>
+    <hr/>
+    <h5>Dishes Added</h5>
+    {% if dishes %}
+        <div>
+            {% for dish in dishes %}
+                <div class="mb-3">
+                    <div class="card">
+                        <div class="row g-0">
+                             <div class="col-md-4 image-container">
+                                 <figure class="figure">
+                                  <img src="{% if dish.image %}{{ dish.image.url }}{% elif dish.image_url %}{{ dish.image_url }}{% else %}{% static 'assets/img/dish_image_placeholder.svg' %}{% endif %}" class="figure-img img-fluid img-constant-size" style="border-top-left-radius: 5px;"  alt="{{ dish.local_name }}">
+                                  <figcaption class="figure-caption font-weight-light text-md-left ms-1" style="font-size: small;"> <p><strong>Description:</strong> {{ dish.image_details }}</figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h6 class="card-title text-primary fw-bold">
+                                            {{ dish.local_name }}{% if dish.local_name %} /
+                                                {{ dish.english_name }}{% endif %}</h6>
+                                        {% if dish.countries.all %}
+                                            <p><strong>Countries:</strong>  {% for country in dish.countries.all %}
+                                                {{ country.name }}
+                                                <span class=" fi fi-{{ country.code|lower }}"></span>
+                                                {% if not forloop.last %}, {% endif %}
+                                            {% endfor %} </p>{% endif %}
+                                        {% if dish.countries_more %}
+                                            <p><strong>Other Countries:</strong> {{ dish.countries_more }}
+                                            </p>{% endif %}
+                                        {% if dish.regions %}
+                                            <p><strong>Region:</strong> {{ dish.regions|title }}</p>{% endif %}
+                                        {% if dish.cultures %}
+                                            <p><strong>Cultures:</strong> {{ dish.cultures|title }}</p>{% endif %}
+                                        <p><strong>Time of Day:</strong> {{ dish.time_of_day|parse_list_string|title }}
+                                        </p>
+                                        {% if dish.time_of_day_more %}
+                                            <p><strong>Additional Time Info:</strong> {{ dish.time_of_day_more|title }}
+                                            </p>{% endif %}
+                                        <p><strong>Type of
+                                            Dish:</strong> {{ dish.type_of_dish|parse_list_string|title }}</p>
+                                        {% if dish.type_of_dish_more %}
+                                            <p><strong>Additional Dish Info:</strong> {{ dish.type_of_dish_more }}
+                                            </p>{% endif %}
+                                        {% if dish.ingredients.all %}<p><strong>Ingredients:</strong>
+                                            {% for ingredient in dish.ingredients.all %}{{ ingredient.name|title }}
+                                                {% if not forloop.last %}, {% endif %}{% endfor %}</p>{% endif %}
+                                        {% if dish.utensils %}
+                                            <p><strong>Utensils:</strong> {{ dish.utensils|title }}</p>{% endif %}
+                                        {% if dish.drink %}
+                                            <p><strong>Drink:</strong> {{ dish.drink|title }}</p>{% endif %}
+                                        <p><strong>Occasions:</strong> {{ dish.occasions|title }}</p>
+                                        {% if dish.occasions_more %}
+                                            <p><strong>Special Occasions:</strong> {{ dish.occasions_more|title }}
+                                            </p>{% endif %}
+                                        {% if dish.more_details %}
+                                            <p><strong>More Details:</strong> {{ dish.more_details }}</p>{% endif %}
+                                        {% if dish.recipe %}
+                                            <p><strong>Recipe:</strong> <a href="{{ dish.recipe }}">Link</a>
+                                            </p>{% endif %}
+                                    </div>
+                                    <div>
+                                        <a href="{% url 'survey:dish_update' dish.id %}" class="btn btn-primary"><i
+                                                class="fas fa-edit"></i> Edit</a>
+                                        <form action="{% url 'survey:dish_delete' dish.id %}" method="post"
+                                              style="display:inline;">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-danger ms-2"
+                                                    onclick="return confirm('Are you sure you want to delete this item?');">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>You have not submitted any dishes. This list will be populated once you submit a dish.</p>
+    {% endif %}
+
+{% endblock %}

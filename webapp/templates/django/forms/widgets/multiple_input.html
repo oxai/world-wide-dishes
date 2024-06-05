@@ -1,0 +1,23 @@
+{% load widget_tweaks %}
+
+{% with id=widget.attrs.id %}
+
+<div style="padding: 1rem; max-height: 15rem; overflow-y: scroll; border: 2px solid #ccc; border-radius: 1rem;" {% if id %} id="{{ id }}"{% endif %}
+     class="{% if widget.attrs.class %}{{ widget.attrs.class }}{% endif %} form-control {{ widget.form_valid }}">
+{% for group, options, index in widget.optgroups %}
+{% if group %}
+<div>
+    <label>{{ group }}</label>
+    {% endif %}
+    {% for option in options %}
+    <div class="form-check d-inline-block me-2">
+        {% include option.template_name with widget=option %}
+    </div>
+    {% endfor %}
+
+    {% if group %}
+</div>
+{% endif %}
+{% endfor %}
+</div>
+{% endwith %}

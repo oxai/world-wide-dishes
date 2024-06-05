@@ -1,0 +1,34 @@
+{% extends "survey/base.html" %}
+
+{% load guest_user %}
+
+{% block title %}Thank you for participating{% endblock %}
+
+{% block subtitle %}Thank you for participating!{% endblock %}
+
+{% block subcontent %}
+<p>
+    Thank you so much for sharing your time and insight with us. We are especially excited to learn more about the food you associate with your home(s) and culture(s).
+</p>
+<p>
+    Please pass this along to your friends, family, colleagues and classmates! We are eager to gather as many perspectives as possible.
+</p>
+<p>
+    You are welcome to submit as many entries as you can; the more information we can gather, the better!
+    {% if user|is_guest_user %}
+    Simply restart the process whenever you are ready! You can also convert to a registered user at any time from the top navigation bar.
+    {% else %}
+    You can simply <a href="{% url 'login' %}">log in</a> again anytime.
+    {% endif %}
+</p>
+<p>
+    If you have any questions or concerns, or would like to raise a complaint, please see the <a href="{% url 'pages:contact' %}">contact details here</a>.
+</p>
+<p>
+    Please remember that if you would like to withdraw any information provided, you can <a href="{% url 'pages:faq' %}">see the procedure here</a>.
+</p>
+<div class="my-4">
+<a href="{% url 'survey:dish_list' %}" class="btn btn-outline-secondary m-1">Back to form</a>
+<a href="{% url 'pages:home' %}" class="btn btn-primary m-1">Return to home page</a>
+</div>
+{% endblock %}

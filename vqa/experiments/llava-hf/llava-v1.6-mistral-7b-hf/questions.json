@@ -1,0 +1,195 @@
+{
+    "questions": [
+        {
+            "question_id": "Q1",
+            "text": "Is this a picture of food?",
+            "choices": {
+                "A": "Yes",
+                "B": "No"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q2",
+            "text": "Is the dish placed outdoors or indoors?",
+            "choices": {
+                "A": "Outdoors",
+                "B": "Indoors"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q3",
+            "text": "What utensils, if any, are shown in this image?",
+            "choices": {
+                "A": "Fork",
+                "B": "Spoon",
+                "C": "Knife",
+                "D": "Chopsticks",
+                "E": "No utensils shown"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q4",
+            "text": "Is the dish placed on a table?",
+            "choices": {
+                "A": "Yes",
+                "B": "No"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q5",
+            "text": "What material is the dish or plate in the image most likely made of?",
+            "choices": {
+                "A": "Ceramic",
+                "B": "Glass",
+                "C": "Metal",
+                "D": "Plastic",
+                "E": "Wood",
+                "F": "Paper",
+                "G": "Clay"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q6",
+            "text": "What is the likely material of the table or surface on which the dish is placed in the image?",
+            "choices": {
+                "A": "Wood",
+                "B": "Glass",
+                "C": "Metal",
+                "D": "Plastic",
+                "E": "Stone or Concrete",
+                "F": "Bamboo",
+                "G": "Fabric or Cloth",
+                "H": "Other",
+                "I": "No table or surface visible"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q7",
+            "text": "What is the dominant color scheme of the image?",
+            "choices": {
+                "A": "Bright and vibrant",
+                "B": "Neutral and earthy",
+                "C": "Dark and moody",
+                "D": "Pastel and soft",
+                "E": "Monochrome",
+                "F": "Mixed colors"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q8",
+            "text": "What is the setting of the image?",
+            "choices": {
+                "A": "Home kitchen",
+                "B": "Restaurant",
+                "C": "Street food stall",
+                "D": "Picnic area",
+                "E": "Market",
+                "F": "Industrial kitchen",
+                "G": "Rural or dusty outdoor setting",
+                "H": "Other"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q9",
+            "text": "What is the name of the dish shown in the provided image? Return the dish name only",
+            "choices": {},
+            "type": "free_form",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q10",
+            "text": "Is there any text or labeling in the image?",
+            "choices": {
+                "A": "Yes, visible and legible",
+                "B": "Yes, but not legible",
+                "C": "No"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q11",
+            "text": "Are there any decorations or garnishes on the dish?",
+            "choices": {
+                "A": "Yes, elaborate",
+                "B": "Yes, simple",
+                "C": "No"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q12",
+            "text": "What type of lighting is used in the image?",
+            "choices": {
+                "A": "Natural light",
+                "B": "Low light",
+                "C": "High contrast light",
+                "D": "Soft and diffused light",
+                "E": "Mixed lighting",
+                "F": "No visible lighting source"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q13",
+            "text": "Are there any additional elements in the image? (e.g., drinks, side dishes, condiments)",
+            "choices": {
+                "A": "Yes, drinks",
+                "B": "Yes, side dishes",
+                "C": "Yes, condiments",
+                "D": "Yes, multiple elements",
+                "E": "No, just the main dish"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q14",
+            "text": "Are there any utencils shown in this image?",
+            "choices": {
+                "A": "Yes",
+                "B": "No"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q15",
+            "text": "Is there a person shown in this image?",
+            "choices": {
+                "A": "Yes",
+                "B": "No"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        },
+        {
+            "question_id": "Q16",
+            "text": "Is the image shown blurry?",
+            "choices": {
+                "A": "Yes",
+                "B": "No"
+            },
+            "type": "multiple_choice",
+            "correct_answer": null
+        }
+    ]
+}

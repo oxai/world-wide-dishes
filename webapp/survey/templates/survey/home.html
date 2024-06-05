@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load guest_user %}
+{% block title %}Before we start{% endblock %}
+
+{% block content %}
+<section class="container p-5">
+    <div class="py-5 text-center">
+        <h2>Some information before we start talking about food!</h2>
+    </div>
+    <p>
+        We are so excited to have you here! Before starting, we would just like make sure you are comfortable with a few details about the project, including how we collect and handle your data:
+    </p>
+    <ol>
+        <li>
+            Participation is absolutely optional and voluntary.
+        </li>
+        <li>
+            You are welcome to delete your data at any point - you can find out <a href="{% url 'pages:data_protection' %}#withdrawal">how to do that here</a>.
+        </li>
+        <li>
+            To protect you, we ask that everyone participating is over the age of 18. You are welcome to fill in this form on behalf of someone else that is also over the age of 18.
+        </li>
+        <li>
+            All personal information will be stored in a secure database.
+            <small><a href="#secure-more" data-bs-toggle="collapse" data-bs-target="#secure-more">[Learn more]</a></small>
+              <div id="secure-more" class="collapse">
+                <small class="form-text text-muted" style="font-size: 1rem">
+                    A secure database is a place for storing important information online in a way that only certain people can access it with a password.
+                </small>
+              </div>
+        </li>
+        <li>
+            A small number of cookies are collected in order for the website to work.
+            <small><a href="#cookies-more" data-bs-toggle="collapse" data-bs-target="#cookies-more">[Learn more]</a></small>
+              <div id="cookies-more" class="collapse">
+                  <small class="form-text text-muted" style="font-size: 1rem">
+                      Cookies are small bits of information that a website stores on your computer or mobile device when you visit it.
+                      We only use cookies to store your user login and/or form submission.
+                  </small>
+              </div>
+        </li>
+    </ol>
+    <p>
+        We have outlined a more detailed consent procedure, which is designed to protect you. You can <a href="{% url 'pages:data_protection' %}" target="_blank">learn more here</a>.
+    </p>
+    <div class="text-center p-4">
+        <a href="{% url 'survey:account' %}" class="btn btn-primary p-3 m-1">I’d like to participate and talk about food!</a>
+        <a href="{% url 'survey:thank_you_no_consent' %}" class="btn btn-secondary p-3 m-1">I would rather not proceed at this time</a>
+    </div>
+</section>
+{% endblock %}

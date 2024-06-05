@@ -1,0 +1,20 @@
+{% extends "survey/base.html" %}
+
+{% block title %}Thank you for your interest{% endblock %}
+
+{% block content %}
+<div class="container my-5" style="max-width: 768px">
+    <h4 class="my-5 text-center">Thank you very much for your interest in and consideration of our project!</h4>
+
+    <p>
+        You can still help out by sharing this initiative with other food lovers in your circle (friends, family, and professional contacts).
+    </p>
+    <p>
+        If you have any questions or concerns, or you would like to raise a complaint, please see the <a href="{% url 'pages:contact' %}">contact details here</a>.
+    </p>
+    <div class="my-4">
+    <a href="{% url 'survey:home' %}" class="btn btn-outline-secondary m-1">Back to form</a>
+    <a href="{% url 'pages:home' %}" class="btn btn-primary m-1">Return to home page</a>
+    </div>
+</div>
+{% endblock %}

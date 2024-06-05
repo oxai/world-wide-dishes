@@ -1,0 +1,42 @@
+{% extends "survey/base.html" %}
+
+{% load i18n static %}
+
+{% block title %}Create an account{% endblock %}
+
+{% block content %}
+<div class="container p-5">
+  <div class="py-5 text-center">
+      <h2>How would you like to contribute?</h2>
+  </div>
+  <p>
+    There are two options you can choose between in order to participate. In both cases we will be asking you about your cultural background and the foods you associate with it; however, you can choose how much personal information to share with us.
+  </p>
+  <h5 class="mt-5">Creating an account:</h5>
+  <p>
+    We encourage you to register a profile with us. This will make it easier for you to edit or delete any of the information you provide to us. It will also be easier for you to come back and submit more information about food! You will also have control over how we interact with you and your personal data.
+  </p>
+  <p>
+    By continuing to register, you agree to sharing your name and email address solely for the purposes of this research project. You also acknowledge that you understand how to withdraw your data, as this process changes depending on the research phase.
+  </p>
+  <a href="{% url 'accounts:signup' %}?next={{ request.get_full_path }}" class="btn btn-primary m-1">{% translate 'Register' %}</a>
+  or <a href="{% url 'login' %}?next={{ request.get_full_path }}" class="btn btn-outline-secondary m-1">{% translate 'Login if you already have an account' %}</a>
+
+  <hr style="margin: 40px 0" />
+  <h5>Continue as guest:</h5>
+  <p>
+    You are welcome to submit this form completely anonymously; however, please be aware that in this case we cannot withdraw your responses and information submitted upon request.
+  </p>
+  <p>
+    If you continue as a guest and would like to submit additional food entries (which we encourage!), we will unfortunately not be able to pre-populate any sections for you.
+  </p>
+  <a href="{% url 'survey:profile' %}" class="btn btn-outline-secondary m-1">{% translate 'Continue as guest' %}</a>
+  <hr style="margin: 40px 0" />
+  <p>
+    Please be advised that while participation is voluntary, by selecting either of the options above it serves as confirmation that you understand and agree to participate. If you do not agree to either of the options above, please follow <a href="{% url 'survey:thank_you_no_consent' %}">this link</a>. Unfortunately, we will not be able to capture your information in this case.
+  </p>
+  <p>
+    In both cases, you have options for withdrawing your data. You can review the <a href="{% url 'pages:faq' %}">full withdrawal procedure here</a>.
+  </p>
+</div>
+{% endblock %}

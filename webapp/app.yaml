@@ -1,0 +1,24 @@
+runtime: python310
+env: standard
+entrypoint: gunicorn -b :$PORT main.wsgi:application
+
+env_variables:
+  APPENGINE_URL: https://<appengine-url>
+  GCP_SECRET_NAME: <gcp-secret-name>
+
+runtime_config:
+  python_version: 3
+
+instance_class: F1
+automatic_scaling:
+  min_instances: 0
+  max_instances: 2
+  target_cpu_utilization: 0.8
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+
+handlers:
+  - url: /.*
+    secure: always
+    redirect_http_response_code: 301
+    script: auto

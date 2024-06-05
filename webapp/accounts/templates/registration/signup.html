@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block title %}Sign up{% endblock %}
+
+{% block content %}
+  <div class="container mb-5" style="max-width: 768px">
+    <h2 class="mt-5 mb-4">Register</h2>
+    <p>Already have an account? You can <a href="{% url 'login' %}?next={{ request.GET.next }}">login here</a>.</p>
+    <form method="post" novalidate>
+      {% csrf_token %}
+
+      {% for field in form %}
+        <div class="form-group mb-4">
+        {% include 'components/formfield.html' %}
+        </div>
+
+        {% if field.name == "password1" %}
+          <p>
+            Before continuing, we’d just like to make sure you choose how we interact with you now that you’ve shared some personal information with us. The following options are completely up to you, and do not affect your ability to participate. If you agree with an option, please select the box next to it.
+          </p>
+        {% endif %}
+
+      {% endfor %}
+
+      <button type="submit" class="btn btn-primary">Create an account</button>
+    </form>
+  </div>
+{% endblock %}

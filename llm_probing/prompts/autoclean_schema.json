@@ -1,0 +1,10 @@
+{
+  "time_of_day": ["str"],
+  "type_of_dish": ["str"],
+  "utensils": ["str"],
+  "ingredients": ["str"],
+  "occasions": {
+    "answer": ["str"],
+    "details": "str"
+  }
+}

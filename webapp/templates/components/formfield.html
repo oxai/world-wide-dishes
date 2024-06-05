@@ -1,0 +1,59 @@
+{% load widget_tweaks %}
+
+{% if field.field.widget.input_type == "checkbox" %}
+  {% if field.field.widget.allow_multiple_selected %}
+    <div>
+      <b>{{ field.label }}{% if field.required %}(*required){% endif %}</b>
+      {% if field.errors %}
+        {% render_field field class="form-control is-invalid" %}
+        {% for error in field.errors %}
+          <div class="invalid-feedback">
+            {{ error }}
+          </div>
+        {% endfor %}
+      {% else %}
+        {% render_field field class="form-control is-valid" %}
+      {% endif %}
+    </div>
+  {% else %}
+    <div class="form-check">
+      {% render_field field class="form-check-input" type="checkbox" %}
+      <div><b>{{ field.label }}{% if field.required %}(*required){% endif %}</b></div>
+      {% if field.help_text %}
+        <small class="form-text text-muted" style="font-size: 1rem">
+          {{ field.help_text|safe }}
+        </small>
+      {% endif %}
+        {% if field.errors %}
+            {% for error in field.errors %}
+            <div class="invalid-feedback" style="display: block;">
+                {{ error }}
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+  {% endif %}
+{% else %}
+  <b>{{ field.label }}{% if field.required %}(*required){% endif %}</b>
+  {% if form.is_bound %}
+    {% if field.errors %}
+      {% render_field field class="form-control is-invalid" %}
+      <div style="clear: both; height: 0px;"></div>
+      {% for error in field.errors %}
+        <div class="invalid-feedback" style="display: block;">
+          {{ error }}
+        </div>
+      {% endfor %}
+    {% else %}
+      {% render_field field class="form-control is-valid" %}
+    {% endif %}
+  {% else %}
+    {% render_field field class="form-control" %}
+  {% endif %}
+
+  {% if field.help_text %}
+    <small class="form-text text-muted" style="font-size: 1rem">
+      {{ field.help_text|safe }}
+    </small>
+  {% endif %}
+{% endif %}

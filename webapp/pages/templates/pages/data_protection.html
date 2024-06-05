@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% load guest_user %}
+{% block title %}Before we start{% endblock %}
+
+{% block extrastyle %}
+<style>
+    h5 {
+        margin-top: -60px;
+        padding: 90px 0 0.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="container p-5">
+    <div class="py-5 text-center">
+        <h2>Data Protection</h2>
+    </div>
+
+    <h5>Table of contents</h5>
+    <ul class="list-spacing">
+        <li><a href="#consent">Why is an informed consent process needed?</a></li>
+        <li><a href="#data">How will my information be used?</a></li>
+        <li><a href="#output">What will the research outputs be?</a></li>
+        <li><a href="#withdrawal">Withdrawing your data and information</a></li>
+        <li><a href="#storage">Our research data storage policy</a></li>
+        <li><a href="#cookies">Are you collecting cookies?</a></li>
+        <li><a href="#ethics">Has this project been reviewed by an Ethics Review Board?</a></li>
+        <li><a href="#points">Are there any specific points I should be aware of when I agree to participate?</a></li>
+    </ul>
+
+    <h5 id="consent">Why is an informed consent process needed?</h5>
+    <p>
+        We are required to collect some information about you to support our research process. This includes asking some questions about your culture and heritage and it is important that you understand that such information can be deemed sensitive.
+    </p>
+    <p>
+        However, you do not need to worry. We are committed to keeping your information safe and protecting your identity throughout our research, including in our research outputs.
+    </p>
+
+    <h5 id="data">How will my information be used?</h5>
+    <p>
+        The information you share about the food you associate with your home(s) and culture(s) will be used as the basis of our research analysis. We will use this information to develop tests for AI systems to see if they are able to capture and represent equally well a more diverse range of experiences and cultures <a href="{% url 'pages:faq' %}#benchmark">[learn more about AI Benchmarks here]</a>. This information will be used anonymously, and our findings will be shared with other researchers.
+    </p>
+    <p>
+        Your personally identifiable information will never be linked to the information you share about food and/or your cultural identity. Provided you have given us permission, we will only contact you, with your permission, to follow up on something you wrote or ask you to fill out similar forms to this one. You can indicate your contact preferences when you register.
+    </p>
+
+    <h5 id="output">What will the research outputs be?</h5>
+    <p>
+        Please refer to the <a href="{% url 'pages:faq' %}">FAQs</a>.
+    </p>
+
+    <h5 id="withdrawal">Withdrawing your data and information</h5>
+    <p>
+        Due to the nature of the research project, there are some limits on how you can withdraw your information.
+    </p>
+    <p>
+        If the study is ongoing (review the <a href="{% url 'pages:faq' %}#timeline">timeline here</a>), please refer to the <a href="{% url 'pages:faq' %}#deletion">FAQs on how to delete data</a>.
+    </p>
+    <p>
+       If we are no longer actively collecting information about food, we ask that you email us directly and we will remove your information. To request your personally identifiable information be withdrawn, please contact our team supervisor.
+    </p>
+    <p>
+        If you are ever in doubt, please do not hesitate to <a href="{% url 'pages:contact' %}">contact us</a> at and we will work to help you understand your options.
+    </p>
+
+    <h5 id="storage">Our research data storage policy</h5>
+    <p>
+        Once we have closed the data collection period part of the project, the research data will be stored for three years, according to the University of Oxford’s data policy.
+    </p>
+    <p>
+        We are storing the information in a secure online database <a href="#secure-more" data-bs-toggle="collapse" data-bs-target="#secure-more">[find out more]</a> and only a small number of researchers have access to it and your personal information will be kept separate. No one will be able to link your personally identifiable information with any information on food that we may publish. A full description of <a href="#withdrawal">how to withdraw your data can be found here</a>.
+    </p>
+      <div id="secure-more" class="collapse">
+        <small class="form-text text-muted" style="font-size: 1rem">
+            A secure database is a place for storing important information online in a way that only certain people can access it with a password.
+        </small>
+      </div>
+
+    <h5 id="cookies">Are you collecting cookies?</h5>
+    <p>
+        In order for this website to work, there is a requirement for a small number of necessary cookies.
+    </p>
+
+    <h5 id="ethics">Has this project been reviewed by an Ethics Review Board?</h5>
+    <p>
+        Ethics Approval for the World Wide Dishes data collection and subsequent research study (reference: CS_C1A_24_004) was obtained from the Departmental Research Ethics Committees of the Computer Science Department at the University of Oxford. Should you have any questions, please <a href="{% url 'pages:contact' %}">reach out to us</a>.
+    </p>
+
+    <h5 id="points">Are there any specific points I should be aware of when I agree to participate?</h5>
+    <p>
+        By continuing with the project, you agree to the following:
+    </p>
+    <ol>
+        <li>
+            I am over the age of 18 years old.
+            <small><a href="#age-more" data-bs-toggle="collapse" data-bs-target="#age-more">[Learn more]</a></small>
+              <div id="age-more" class="collapse">
+                  <small class="form-text text-muted" style="font-size: 1rem">
+                      You are welcome to complete this form on behalf of someone else, but they must be over the age of 18 as well!
+                  </small>
+              </div>
+        </li>
+        <li>
+            I understand that my data will be collected, securely stored and anonymously distributed for research purposes.
+        </li>
+        <li>
+            I understand that my participation is voluntary and that I am free to withdraw personally identifiable information at any point, without giving any reason.
+            <small><a href="#withdraw-more" data-bs-toggle="collapse" data-bs-target="#withdraw-more">[Learn more]</a></small>
+              <div id="withdraw-more" class="collapse">
+                  <small class="form-text text-muted" style="font-size: 1rem">
+                      Personally identifiable information includes your name and email address. We are storing this information in a secure online database and only a small number of researchers have access to it and your personal information will be kept separate. No one will be able to link your personally identifiable information with any information on food that we may publish.
+                      A full description of <a href="{% url 'pages:data_protection' %}#withdrawal">how to withdraw your data can be found here</a>.
+                  </small>
+              </div>
+        </li>
+    </ol>
+
+
+</section>
+{% endblock %}

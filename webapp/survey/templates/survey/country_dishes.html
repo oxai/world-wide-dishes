@@ -1,0 +1,267 @@
+{% load static %}
+{% load humanize %}
+<link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+/>
+<link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+<div class="container my-6">
+    <div class="row mb-4">
+        <div class="col d-flex justify-content-end">
+            <!-- Form -->
+            <form method="get" action="">
+                <div class="form-group position-relative">
+                    <select id="countryFilter" name="country" class="form-control">
+                        <option value="">Select a Country</option>
+                        {% for country in countries %}
+                            <option value="{{ country.id }}"
+                                    {% if request.GET.country == country.id|stringformat:"s" %}selected{% endif %}>
+                                {{ country.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    <i class="fa-solid fa-chevron-down position-absolute"
+                       style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row" id="divTableFilter" style="display: none;">
+        <div class="col-12">
+            <table id="countryDetailsTableFilter" class="table table-striped table-responsive">
+                <thead class="thead-dark">
+                <tr>
+                    <!-- Removed the Rank column -->
+                    <th>Country</th>
+                    <th>Dishes</th>
+                    <th>Contributors</th>
+                    <th>View</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Rows to be filled in by AJAX -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-12 text-center">
+                <button id="clearFiltersButton" class="btn btn-primary" style="margin-right: 10px;">
+                    <i class="fas fa-filter"></i> Clear Filters
+                </button>
+                <form method="post" novalidate style="display: inline-block;">
+                    {% csrf_token %}
+                    {% include 'components/form.html' %}
+                    <a href="{% url 'survey:dish_create' %}" class="btn btn-success m-1">
+                        <i class="fas fa-plus"></i> Submit New Dish
+                    </a>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    {% if page_obj %}
+        <div class="row" id="divTable">
+            <div class="col-12">
+                <table id="countryDetailsTable" class="table table-striped table-responsive table-hover">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Rank</th>
+                        <th>Country</th>
+                        <th>Dishes</th>
+                        <th>Contributors</th>
+                        <th>View</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for country in page_obj %}
+                        <tr class='clickable-row' data-href="{% url 'survey:country_details' country.id %}"
+                            onclick="window.location.href = this.getAttribute('data-href');">
+                            <td class="text-center">#{{ country.rank }}</td>
+                            <td><span class="fi fi-{{ country.code|lower }}"></span> {{ country.name }}</td>
+                            <td class="text-center">{{ country.num_dishes }}</td>
+                            <td class="text-center">{{ country.num_contributors }}</td>
+                            <td class="text-center"><i class="fa-solid fa-square-arrow-up-right" style="color: #000055;"></i></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div id="navPagination">
+            <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link page-link-ajax" href="#" data-page="1" aria-label="First">
+                                <span aria-hidden="true">&laquo;&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link page-link-ajax" href="#" data-page="{{ page_obj.previous_page_number }}"
+                               aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    {% if page_obj.number > 4 %}
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                                <a class="page-link page-link-ajax" href="#" data-page="{{ num }}">{{ num }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.paginator.num_pages > page_obj.number|add:'2' %}
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    {% endif %}
+
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link page-link-ajax" href="#" data-page="{{ page_obj.next_page_number }}"
+                               aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link page-link-ajax" href="#" data-page="{{ page_obj.paginator.num_pages }}"
+                               aria-label="Last">
+                                <span aria-hidden="true">&raquo;&raquo;</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    {% else %}
+        <div class="card rounded-card-grey text-center" style="background-color: #f0f0f0;">
+            <div class="card-body">
+                <p class="card-text">Oops 😔 This list is empty because we haven't received any new dishes today. Be the
+                    first one to appear on this list by submitting a dish!😊</p>
+                <div class="d-flex justify-content-center">
+                    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                            type="module"></script>
+                    <dotlottie-player src="https://lottie.host/5c8a0c2e-aa70-46d8-b965-cdf49d35b601/OEhuoCbhaU.json"
+                                      background="transparent" speed="1" style="width: 300px; height: 300px;" loop
+                                      autoplay></dotlottie-player>
+                </div>
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    {% include 'components/form.html' %}
+                    <a href="{% url 'survey:dish_create' %}" class="btn btn-success m-1">Add New Dish</a>
+                </form>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<script>
+    $(document).ready(function () {
+
+        $('#countryFilter').on('change', function () {
+            var countryId = $(this).val();
+            // Empty the table before getting new details
+            if (countryId) {
+                $.ajax({
+                    url: 'get-country-details',
+                    data: {
+                        'country_id': countryId
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.status === 'success' && data.country.length > 0) {
+                            // Update your page with the country details.
+                            // Example: $('#countryDetails').text(data.country.details);
+                            $('#countryDetailsTableFilter tbody').empty();
+                            var country = data.country[0];
+                            // Append new row to the table
+                            $('#countryDetailsTableFilter tbody').append(
+                                '<tr class="clickable-row" data-href="' + country.detailUrl + '">' +
+                                '<td><span class="fi fi-' + country.code.toLowerCase() + '"></span> ' + country.name + '</td>' +
+                                '<td class="text-center">' + country.num_dishes + '</td>' +
+                                '<td class="text-center">' + country.num_contributors + '</td>' +
+                                '<td class="text-center"><i class="fa-solid fa-square-arrow-up-right" style="color: #000055;"></i></td>' +
+                                '</tr>'
+                            );
+                               $('.clickable-row').on('click', function() {
+                                    window.location = $(this).data('href');
+                                });
+                            $('#divTable').hide();
+                            $('#navPagination').hide();
+                            $('#divTableFilter').show();
+                        } else {
+                            // Handle no country found.
+                        }
+                    },
+                    error: function (xhr, errmsg, err) {
+                        // Handle errors
+                    }
+                });
+            } else {
+                $('#divTableFilter').hide();
+                $('#divTable').show();
+                $('#navPagination').show();
+            }
+        });
+
+        $('#clearFiltersButton').on('click', function () {
+            // Hide the filter table and any other elements like custom pagination
+            $('#divTableFilter').hide();
+
+            // Show the original table and pagination (assuming their IDs are #divTable and #navPagination)
+            $('#divTable').show();
+            $('#navPagination').show();
+
+            // Optionally, reset any filters to their default state
+            // For example, if you have a dropdown for country filters:
+            $('#countryFilter').val('');
+        });
+
+        $('.container.my-6').on('click', '.page-link-ajax', function (e) {
+            e.preventDefault();
+            var $this = $(this); // Cache the jQuery object of the clicked link
+            if ($this.data('requestRunning')) {
+                // Prevent starting a new request if one is already running
+                return;
+            }
+            $this.data('requestRunning', true); // Mark the request as running
+
+            var page = $this.data('page');
+            var baseUrl = '{% url 'survey:country_dishes' %}';
+            var target = $this.closest('.tab-pane').attr('id');
+            var urlWithPage = `${baseUrl}?page=${page}`;
+
+            $.ajax({
+                url: urlWithPage,
+                type: 'GET',
+                success: function (data) {
+                    $('#' + target).html(data);
+                },
+                error: function () {
+                    console.error('Failed to fetch page');
+                    $('#' + target).html('<p>An error has occurred. Please try again later.</p>');
+                },
+                complete: function () {
+                    $this.data('requestRunning', false); // Reset the flag when the request completes
+                }
+            });
+        });
+    });
+</script>
+
+
+
+

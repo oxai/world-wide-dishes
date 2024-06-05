@@ -1,0 +1,18 @@
+country_match:
+  prompt: 'COUNTRY: `{country_llm}`\nCOUNTRIES: `{countries}`\nDoes the COUNTRY appear in COUNTRIES? Take into account that the same country may be referred to in different variations. Answer with just True or False.'
+  input_columns:
+    - country_llm
+    - countries
+  return_type: "bool"
+ingredients_intersect:
+  prompt: "INGREDIENTS_A: `{ingredients}`\nINGREDIENTS_B: `{ingredients_llm}`\nWhich ingredients appear in **BOTH** INGREDIENTS_A and INGREDIENTS_B? Take into account that the same ingredient may be referred to in different variations, and try to merge duplicates. Reply only with a python list of ingredients, formatted as ['ingredient_1', 'ingredient_2', ...]."
+  input_columns:
+    - ingredients
+    - ingredients_llm
+  return_type: ['str']
+ingredients_union:
+  prompt: "INGREDIENTS_A: `{ingredients}`\nINGREDIENTS_B: `{ingredients_llm}`\nWhich ingredients appear in **EITHER OR BOTH** INGREDIENTS_A and INGREDIENTS_B? Take into account that the same ingredient may be referred to in different variations, and try to merge duplicates. Reply only with a python list of ingredients, formatted as ['ingredient_1', 'ingredient_2', ...]."
+  input_columns:
+    - ingredients
+    - ingredients_llm
+  return_type: ['str']

@@ -1,0 +1,17 @@
+openai==1.24.0
+pandas==2.2.2
+python-dotenv==1.0.1
+retry
+timeout_decorator
+diffusers
+transformers
+accelerate
+matplotlib
+groq
+jupyter
+colorlog
+jsonlines
+plotly
+seaborn
+pycountry_convert
+retry

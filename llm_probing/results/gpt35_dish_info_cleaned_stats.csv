@@ -1,0 +1,11 @@
+,Africa,Asia,Europe,North America,Oceania,South America
+count,2560.0,860.0,290.0,195.0,15.0,55.0
+country_acc,0.61,0.96,0.91,0.93,1.0,0.98
+time_of_day_iou,0.51,0.52,0.58,0.55,0.55,0.49
+type_of_dish_iou,0.4,0.46,0.57,0.52,0.42,0.49
+utensils_iou,0.47,0.7,0.8,0.72,0.27,0.65
+ingredients_iou,0.34,0.4,0.32,0.41,0.42,0.46
+apologize,8.05,0.35,0.0,1.54,0.0,0.0
+not known,6.17,0.23,0.0,1.03,0.0,0.0
+not real,0.66,0.0,0.0,0.51,0.0,0.0
+take a guess,0.0,0.0,0.0,0.0,0.0,0.0

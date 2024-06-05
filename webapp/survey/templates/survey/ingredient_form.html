@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Ingredient{% endblock %}
+
+{% block content %}
+<div class="container my-5" style="max-width: 768px">
+<form method="post" novalidate>
+  {% csrf_token %}
+  {% include 'components/form.html' %}
+  <button type="submit" class="btn btn-primary m-1">Save ingredient</button>
+</form>
+</div>
+{% endblock %}

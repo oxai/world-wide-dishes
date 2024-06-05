@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="container mb-5" style="max-width: 768px">
+  <h2 class="mt-5 mb-4">Login</h2>
+  <p>Is this your first time visiting us? In order to continue with the project, we need to ask you to follow a few steps. You can find out more <a href="{% url 'survey:home' %}">here</a>!</p>
+  {% if form.errors %}
+  <div class="mb-2 p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3">
+    Your username and password didn't match. Please try again.
+  </div>
+  {% endif %}
+
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+      {% include 'components/form.html' %}
+    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <input type="hidden" name="next" value="{{ next }}">
+  </form>
+
+</div>
+
+{% endblock %}

@@ -4,11 +4,11 @@ We use a [CLIP model](https://github.com/openai/CLIP) to obtain text embeddings 
 
 The overall descriptor group score is calculated by subtracting the negative weighted score from the positive weighted score and then normalizing it to a value between -1 and 1. Descriptor scores closer to 1 signify an image has a stronger association with the positive descriptors, while values closer to -1 indicate a stronger association with the negative descriptors. Given the varying contributions by region, we average the scores for all dish images within each continent separately for each model to show the continent's overall association with positive or negative descriptors.
 
-In the following instructions, we assume that you are running your code from the `/clip_probing` directory of the repository (`world-wide-dishes`).
+In the following instructions, we assume that you are running your code from the [`/clip_probing`](/clip_probing/) directory of the repository (`world-wide-dishes`).
 
-To get started, create an experiment folder in [`/clip_probing/experiments`](./clip_probing/experiments) to store the experiment-specific configurations and model outputs for each step below.
+To get started, create an experiment folder in [`/clip_probing/experiments`](/clip_probing/experiments/) to store the experiment-specific configurations and model outputs for each step below.
 
-###  1. Create a json file containing a list of descriptor groups with positive and negative keywords.
+###  1. Create a `json` file containing a list of descriptor groups with positive and negative keywords.
 Create `JSON file` in the specified format below defining a list of descriptor groups each containing a list of positive or negative descriptor keywords. We provide an example of the descriptor groups and corresponding keywords used in the experiment below, feel free to extend the list by adding new descriptor groups or keywords. (`descriptors.json`)
 
  ```json
@@ -166,14 +166,14 @@ images_dir = /food-bias/countries_all
 To create the descriptor embeddings, run the script below passing the path to the experiment directory as an argument. The script loads the `config.ini` file from the experiment directory and parses the list of descriptors from the descriptor JSON file path specified, formats each descriptor into a caption-like format using the prompt, passes the caption through the specified CLIP model and outputs a csv file containing each descriptor caption and its corresponding CLIP text embedding in the experiments folder (`descriptors_embeddings.csv`).
 
 ```bash
-python scripts/create_descriptors_embeddings.py experiments/region_experiments
+python scripts/create_descriptors_embeddings.py <experiments_directory>
 ```
 
 ### 4. Create image embeddings
 To create the image embeddings, run the script below passing the path to the experiment directory as an argument. The script loads the experiments configuration from the `config.ini` file and loads all the images in the specified directory i.e. files that contain the `.png` extension. We perform minimal preprocessing to the images, converting them to `RGB` format as that is the CLIP standard. We then load the CLIP model specified using the model name string, encode the images and save the output in a csv file in the experiments folder (`image_embeddings.csv`). 
 
 ```bash
-python scripts/create_img_embeddings_all.py experiments/region_experiments
+python scripts/create_img_embeddings_all.py <experiments_directory>
 ```
 
 We provide an option of passing the images directory as an argument to the script below by including it after the experiment path argument. 
@@ -213,5 +213,3 @@ def normalize_scores(scores):
 ```
 
 We run association tests for the dish images generated with the specified prompts and unspecified prompts separately, only changing the path to the embeddings and the results output file in the notebook.
-
-

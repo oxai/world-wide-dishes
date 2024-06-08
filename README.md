@@ -1,13 +1,13 @@
 # You are what you eat? Feeding foundation models a regionally diverse food dataset of World Wide Dishes
 [Jabez Magomere](https://github.com/JabezNzomo99), [Shu Ishida](https://github.com/shuishida), [Tejumade Afonja](https://github.com/tejuafonja), [Aya Salama](https://github.com/Aya-S), [Daniel Kochin](https://github.com/danielkochin), [Foutse Yuehgoh](https://github.com/Foutse), [Imane Hamzaoui](https://github.com/imanehmz), [Raesetje Sefala](https://github.com/sefalab), [Aisha Aalagib](https://github.com/AishaAlaagib), [Elizaveta Semenova](https://github.com/elizavetasemenova), [Lauren Crais](https://www.law.ox.ac.uk/people/lauren-crais), [Siobhan Mackenzie Hall](https://github.com/smhall97)
 
-Official Website (used for data collection): https://worldwidedishes.com/
+**Official Website** (used for data collection): https://worldwidedishes.com/
 
 ## The World Wide Dishes Dataset
 
 - [Licence and terms of use](./LICENCE.md)
 
-We present the World Wide Dishes dataset which seeks to assess these disparities through a decentralised data collection effort to gather perspectives directly from people with a wide variety of backgrounds from around the globe with the aim of creating a dataset consisting of their insights into their own experiences of foods relevant to their cultural, regional, national, or ethnic lives.
+We present the **World Wide Dishes** dataset which seeks to assess these disparities through a decentralised data collection effort to gather perspectives directly from people with a wide variety of backgrounds from around the globe with the aim of creating a dataset consisting of their insights into their own experiences of foods relevant to their cultural, regional, national, or ethnic lives.
 
 - [World Wide Dishes csv](./data/WorldWideDishes_2024_June_World_Wide_Dishes.csv)
 - [World Wide Dishes Excel Sheet](./data/WorldWideDishes_2024_June.xlsx)
@@ -83,3 +83,10 @@ Due to the high degree of inaccurate and culturally insensitve imagery we will n
 For transparency and insight into the review conducted, we are releasing the text responses only:
 
 - [Community Reviews](./data/Community_Review_Generated_Dish_Images.csv)
+
+## Author submitted CC-licenced dish images
+
+In the World Wide Dishes dataset, we have a column `uploaded_image_name` that contains paths to dish images that we have contributed and are CC-licenced. 
+We have uploaded these images to a Google Drive folder for public access. 
+- [Contributor- submitted dish images on Google Drive](https://drive.google.com/drive/folders/1yDfeOdGKIpC1XNEp4TrSbkKbhz2Nzl9a?usp=sharing
+)

@@ -84,9 +84,11 @@ For transparency and insight into the review conducted, we are releasing the tex
 
 - [Community Reviews](./data/Community_Review_Generated_Dish_Images.csv)
 
-## Author submitted CC-licenced dish images
+## Contributor-submitted CC-licenced dish images
 
 In the World Wide Dishes dataset, we have a column `uploaded_image_name` that contains paths to dish images that we have contributed and are CC-licenced. 
+This is a subset of the images that were contributed to the data collection website.
+We only include those images that we were personally able to verify as being owned by the contributor.
 We have uploaded these images to a Google Drive folder for public access. 
-- [Contributor- submitted dish images on Google Drive](https://drive.google.com/drive/folders/1yDfeOdGKIpC1XNEp4TrSbkKbhz2Nzl9a?usp=sharing
+- [Contributor-submitted dish images on Google Drive](https://drive.google.com/drive/folders/1yDfeOdGKIpC1XNEp4TrSbkKbhz2Nzl9a?usp=sharing
 )

@@ -1,4 +1,4 @@
-## VQA Experiments to probe generated outputs for potential biases
+## VQA Experiments to probe generated outputs for potential food stereotypes
 
 We explore the use of state-of-the-art VQA models to identify food-related stereotypes by prompting the model with multiple-choice questions to identify visual elements that could reveal stereotyped generalisations within generated images. The VQA model processes each generated dish image along with its corresponding question and selects an answer from the given choices. We analyse the distribution of responses for dish images generated for different regions and plot the proportion of images with the same response to assess the severity of food stereotypes. We use [Llava-v1.6-34b](https://llava-vl.github.io/blog/2024-01-30-llava-next/) as the default VQA model due to its superior performance in initial experiments compared to other models. 
 

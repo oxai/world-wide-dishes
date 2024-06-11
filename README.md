@@ -2,6 +2,7 @@
 [Jabez Magomere](https://github.com/JabezNzomo99), [Shu Ishida](https://github.com/shuishida), [Tejumade Afonja](https://github.com/tejuafonja), [Aya Salama](https://github.com/Aya-S), [Daniel Kochin](https://github.com/danielkochin), [Foutse Yuehgoh](https://github.com/Foutse), [Imane Hamzaoui](https://github.com/imanehmz), [Raesetje Sefala](https://github.com/sefalab), [Aisha Aalagib](https://github.com/AishaAlaagib), [Elizaveta Semenova](https://github.com/elizavetasemenova), [Lauren Crais](https://www.law.ox.ac.uk/people/lauren-crais), [Siobhan Mackenzie Hall](https://github.com/smhall97)
 
 **Official Website** (used for data collection): https://worldwidedishes.com/
+- [**Read more about the project and the dataset**](https://worldwidedishes.com/about/)
 
 ## The World Wide Dishes Dataset
 
